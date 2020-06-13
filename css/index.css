@@ -1,0 +1,182 @@
+body{
+	background-color: rgb(245, 246, 247);
+}
+
+.clear{
+	clear:both;
+}
+
+/*-------------------------------------------------------*/
+
+/*-------------------------------------------------------*/
+
+#content{
+	width:900px;
+	margin:8px auto 15px;/*auto div居中*/
+}
+
+#content_top{
+	text-align: right;
+	font-size:13px;
+}
+#content_bottom{
+	border:1px solid #999;
+	background-color: #FCFDEF;
+	padding:10px 15px;
+}
+#content_bottom h1{
+	font-size: 15px;
+	display: inline;
+}
+#content_bottom span{
+	font-size: 13px;
+}
+#productlist_img img{
+	width: 100%;
+}
+.book{
+	float: left;
+	width: 25%;
+	text-align: center;
+	padding:10px 0px;
+}
+.bookimg img{
+	width: 130px;
+	height: 196px;
+}
+#jumpPage{
+	text-align: center;
+	margin: 10px;
+}
+#jumpPage a{
+	padding:2px 6px;
+	border: 1px solid #9AAFE5;
+	text-decoration: none;
+	color:#9AAFE5;
+}
+#jumpPage a:hover{
+	color:#2B66A5;
+	border: 1px solid #2B66A5;
+}
+.current{
+	background-color: blue;
+}
+
+/*-------------------------------------------------------*/
+
+
+
+#bottom{
+	background-color: #EFEEDC;
+	height:60px;
+	padding:10px 0px;
+}
+
+#bottom_left{
+	width: 400px;
+	float: left;
+	margin-left: 200px;
+}
+
+#bottom_middle{
+	width: auto;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#bottom_right{
+	width: 500px;
+	float: left;
+	line-height:28px;/*行高*/
+}
+
+
+/* 位置信息 */
+.col-0, .col-1{
+	float: left;
+}
+.col-2{
+	float: right;
+}
+
+.logo{
+	margin-bottom: 0px;
+	margin-top: 2px;
+}
+
+/* ——————————————————————————导航栏—————————————————————————————— */
+nav{
+	background-color:rgb(51, 51, 51);
+	color:rgb(245, 246, 247);
+	border: 1px solid transparent;
+	top:0px;
+	padding:10px 20px;
+	text-align: center;
+}
+
+nav a{
+	margin: 0 8px;
+	color:  rgb(245, 246, 247);
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 15px;
+}
+nav a:hover{
+	color: #999;
+}
+
+nav .search-form, nav .col-0, nav .col-1, nav .col-2{
+	height: 1px;
+	display:inline-block;
+}
+nav .col-0{
+	height:3px;
+	padding-right: 10px;
+}
+
+nav .search-form{
+	position: relative;
+	float: unset;
+
+}
+
+/* 顶部组建-搜索栏 */
+.btn{
+	width: auto;
+	height: 27px;
+	margin-left:0px;
+	margin-right: 0px;
+	margin-top: 0px;
+	float: right;
+	border: none;
+	color: #fff;
+	letter-spacing: 1px;
+	background:rgb(72, 138, 247);
+}
+
+.input_form{
+	border: none;
+	margin-left:0px;
+	margin-right: 0px;
+	margin-top: 0px;
+	height: 25px;
+}
+
+.search-form{
+	width:auto;
+	float: right;
+	margin-top:auto;
+	margin-bottom: 3px;
+	font-size: 13px;
+}
+/* ———————————————————————————底部的注脚————————————————————————————— */
+footer{
+    background-color:rgb(51, 51, 51);
+    color:white;
+    clear:both;
+    width: 100%;
+    text-align:center;
+    padding:5px;
+    position: absolute;
+    bottom: 0px;
+}
