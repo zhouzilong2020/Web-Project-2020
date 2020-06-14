@@ -21,7 +21,7 @@ body{
 }
 #content_bottom{
 	border:1px solid #999;
-	background-color: #FCFDEF;
+	background-color:rgb(234,234,234);
 	padding:10px 15px;
 }
 #content_bottom h1{
@@ -55,11 +55,11 @@ body{
 	color:#9AAFE5;
 }
 #jumpPage a:hover{
-	color:#2B66A5;
-	border: 1px solid #2B66A5;
+	color:#4a65d2;;
+	border: 1px solid #4a65d2;;
 }
 .current{
-	background-color: blue;
+	background-color: #488af7;
 }
 
 /*-------------------------------------------------------*/
@@ -112,6 +112,7 @@ nav{
 	top:0px;
 	padding:10px 20px;
 	text-align: center;
+	width:100%;
 }
 
 nav a{
@@ -154,6 +155,10 @@ nav .search-form{
 	background:rgb(72, 138, 247);
 }
 
+.btn:hover{
+	background-color:#4a65d2;
+}
+
 .input_form{
 	border: none;
 	margin-left:0px;
@@ -177,6 +182,6 @@ footer{
     width: 100%;
     text-align:center;
     padding:5px;
-    position: absolute;
+    position: relative;
     bottom: 0px;
 }

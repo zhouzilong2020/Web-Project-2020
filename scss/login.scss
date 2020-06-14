@@ -1,0 +1,96 @@
+$bg_color : rgb(34,34,34);
+$font_color :  rgb(245, 246, 247);
+$btn_color : rgb(72, 138, 247);
+$btn_hover_color: rgb(74,101,210);
+
+
+.admin_login{
+    width:300px;
+    height:auto;
+    overflow:hidden;
+    margin:10% auto 0 auto;
+    padding:40px;
+    box-shadow:0 -5px 30px  rgb(245, 246, 247);
+    border-radius:5px;
+    color: $font_color;
+    dt{
+        font-size:20px;
+        font-weight:bold;
+        text-align:center;
+        color: $font_color;
+        text-shadow:0 0 1px $bg_color;
+        margin-bottom:15px;
+        display:block;
+    }
+    dd{
+        margin:5px 0;
+        height:42px;
+        overflow:hidden;
+        position:relative;
+
+        .login_txtbx{
+            font-size:14px;
+            height:26px;
+            line-height:26px;
+            padding:8px 5%;
+            width:90%;
+            text-indent:2em;
+            border:none;
+            background:$font_color;
+            color:black;
+            &:focus{
+                border-color: $btn_color;
+            }
+        }
+
+        &:before{
+            position:absolute;
+            top:0;
+            left:10px;
+            height:42px;line-height:42px;
+            font-size:20px;
+            color:$bg_color;
+        }
+
+        .ver_btn{
+            text-align:right;
+            border:none;
+            color:$btn_color;
+            height:42px;
+            line-height:42px;
+            margin:0;
+            z-index:1;
+            position:relative;
+            float:right;
+            background:$bg_color;
+        }
+        .submit_btn{
+            width:100%;
+            height:42px;
+            border:none;
+            font-size:16px;
+            background:$btn_color;
+            color:$font_color;
+            &:hover{
+                background:$btn_hover_color;
+                color:$font_color;
+            }
+        }
+        p{
+            font-size:12px;
+            text-align:center;
+            margin:5px 0;
+        }
+        
+    }
+    .user_icon:before{
+        content:"U";
+    }
+    .pwd_icon:before{
+        content:"P";
+    }
+    .val_icon:before{
+        content:"V";
+    }
+
+}
