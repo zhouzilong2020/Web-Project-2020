@@ -13,6 +13,7 @@ body{
 #content{
 	width:900px;
 	margin:8px auto 15px;/*auto div居中*/
+	margin-bottom: 200px;
 }
 
 #content_top{
@@ -97,6 +98,7 @@ body{
 }
 .col-2{
 	float: right;
+	margin-right: 20px;
 }
 
 .logo{
