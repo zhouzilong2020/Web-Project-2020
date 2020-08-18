@@ -1,0 +1,87 @@
+*{margin:0; padding:0; list-style:none; border:0; text-decoration:none; font-family:"微软雅黑"; font-style:normal}
+body{ background:#f7f7f7}
+.tianxiehedui{ width:1226px; height:auto; overflow:hidden; margin:100px auto}
+.rzhdndgw{ width:1226px; height:auto; overflow:hidden; line-height:50px; font-size:14px; padding-left:20px; color:#666; background:#fff}
+.shouhurxl{ width:1226px; height:auto; overflow:hidden; background:#FFF; margin-top:10px}
+.shouhurxl1{ width:1226px; height:auto; overflow:hidden}
+.shouhurxl1 em{ display:block; line-height:50px; font-size:14px; color:#333; padding-left:20px; float:left}
+.shouhurxl1 a{ display:block; line-height:50px; font-size:14px; color:#09f; padding-left:10px; float:left}
+.shouhurxl1 a:hover{ text-decoration:underline}
+.shouhurxl2{ width:1226px; height:auto; overflow:hidden}
+.shouhurxl2 span{ display:block; line-height:50px; font-size:12px; color:#999; padding-left:20px; float:left}
+.shouhurxl h3{ display:block; line-height:50px; font-size:14px; padding-left:20px; font-weight:100; color:#333}
+.zhifufangsj1{ width:1226px; height:auto; overflow:hidden} 
+.zhifufangsj1 span{ display:block; line-height:50px; font-size:12px; color:#999; padding-left:20px}
+.xxpop1{ width:1226px; height:auto; overflow:hidden}
+.xxpop2{ float:left; margin-right:40px}
+.xxpop2 span{ display:block; padding-left:20px; padding-right:20px; line-height:50px; font-size:14px; color:#666}
+.xxpop2 p{ display:block; padding-left:20px; padding-right:20px; line-height:50px; font-size:12px; color:#333}
+.xxpop2 p img{ display:block; width:50px; height:50px; float:left}
+.xxpop2 a:hover p{ text-decoration:underline; color:#09f}
+.maijiayouhuayue{ width:1226px; height:auto; overflow:hidden; background:#FFF; padding-bottom:6px; border-bottom:1px solid #e6e6e6; padding-top:6px; border-top:1px solid #e6e6e6}
+.maijiayouhuayue em{ display:block; line-height:50px; font-size:14px; color:#666; float:left}
+.shouhurxlm{ width:1226px; height:auto; overflow:hidden; background:#FFF}
+.shouhurxlm ul li{ width:1226px; height:auto; overflow:hidden}
+.shouhurxlm ul li em{ line-height:30px; float:right; font-size:14px; color:#666; width:90px}
+.ddzjes{ width:1226px; height:auto; overflow:hidden; border-top:1px solid #bbb; border-bottom:1px solid #bbb}
+.ddzjes em{ padding-left:20px; padding-right:10px; float:left; font-size:14px; line-height:50px}
+.ddzjes em{ color:#F00; font-size:20px; font-weight:bold}
+.syycklo{ width:1226px; height:30px; overflow:hidden; background:#FFF; border-bottom:1px solid #bbb}
+.syycklo em{ display:block; padding-left:20px; line-height:30px; font-size:14px; float:left; color:#666}
+.syycklo span{ display:block; padding-left:6px; line-height:30px; font-size:14px; float:left; color:#333}
+.zgykskbj{ width:1226px; height:50px; overflow:hidden; background:rgba(255, 153, 0, 0.1); border-bottom:1px solid #e6e6e6; display:none}
+.tijiaodingdang56{ display:block; width:100px; height:30px; text-align:center; line-height:30px; font-size:14px; color:#fff; background:#09f; float:right; margin-top:10px}
+.tijiaodingdang56:hover{ background:#058de7}
+.zgykskbj em{line-height:50px; font-size:14px; float:left; color:#666; text-align:right; padding-left:20px}
+.zgykskbj a{ display:block; padding-left:20px; padding-right:20px; background:#f90; line-height:30px; font-size:14px; float:left; margin-top:10px; margin-left:6px; color:#fff}.zgykskbj a:hover{ background:#e98c00}
+.changepc{ width:1218px;background:#fffdf3; border:4px solid #09f; height:auto; overflow:hidden; display:none}
+.tongyongdizhi span{ display:block; padding-right:20px; line-height:30px; font-size:12px; color:#111; float:left}
+.tongyongdizhi a{ display:block; padding-left:20px; font-size:12px; color:#f00; line-height:30px}
+.tongyongdizhi{ width:1198px; height:30px; margin:0 auto; border-bottom:1px dashed #ffebcc}
+.dandudizhi{ width:1198px; height: auto; margin:0 auto; border-bottom:1px dashed #ffebcc}
+.dandudizhi a{ display:block; padding-left:20px; font-size:12px; color:#f00; line-height:30px}
+.dandudizhi span{ display:block; padding-right:20px; line-height:30px; font-size:12px; color:#111; float:left}
+.opcaty1{ width:1198px; height:auto; overflow:hidden; margin:0 auto; display:none}
+.opcaty2{ width:1198px; height:auto; overflow:hidden; margin-bottom:10px}
+.opcaty2 em{ display:block; line-height:30px; font-size:12px; color:#666; float:left; padding-right:20px}
+._citys { width: 450px; display: inline-block; border: 2px solid #eee; padding: 5px; position: relative; background:#fff}
+._citys span { color: #56b4f8; height: 15px; width: 15px; line-height: 15px; text-align: center; border-radius: 3px; position: absolute; right: 10px; top: 10px; border: 1px solid #56b4f8; cursor: pointer; }
+._citys0 { width: 100%; height: 34px; display: inline-block; border-bottom: 2px solid #56b4f8; padding: 0; margin: 0; }
+._citys0 li { display: inline-block; line-height: 34px; font-size: 15px; color: #888; width: 80px; text-align: center; cursor: pointer; }
+.citySel { background-color: #56b4f8; color: #fff !important; }
+._citys1 { width: 100%; display: inline-block; padding: 10px 0; }
+._citys1 a { width: 83px; height: 35px; display: inline-block; background-color: #f5f5f5; color: #666; margin-left: 6px; margin-top: 3px; line-height: 35px; text-align: center; cursor: pointer; font-size: 13px; overflow: hidden; }
+._citys1 a:hover { color: #fff; background-color: #56b4f8; }
+.AreaS { background-color: #56b4f8 !important; color: #fff !important; }
+.bcshrxopl{ display:block; padding-left:20px; padding-right:20px; line-height:40px; background:#09f; color:#FFF; float:left; font-size:14px; margin-top:10px; margin-bottom:10px}
+.bcshrxopl:hover{ background:#0080d5}
+.xgfpxo{ width:1218px; background:#FFFDF3; margin:0 auto; border:4px solid #09f; overflow:hidden; display:none}
+.fapiaowr{ width:1218px; height:auto; overflow:hidden;border-bottom: 1px dashed #FFEBCC}
+.fapiaowr span{ display:block; padding-left:20px; line-height:50px; color:#333; font-size:14px}
+.fapiaowr1{ width:1198px; height:auto; overflow:hidden; margin:0 auto}
+.fapiaowr1 span{ display:block; padding-left:20px; line-height:30px; color:#333; font-size:14px; float:left}
+.fapiaowr1 a{display: block;padding-left: 20px;font-size: 12px;color: #F00;line-height: 30px; float:left}
+.worilrgo{ background:#09f}
+.worilrgo:hover{ background:#0080d5}
+.fapiaowr3{ display:none}
+.tijiaozhifu{ width:1226px; height:auto; margin:100px auto; overflow:hidden; border-top:2px solid #e4e4e4; border-bottom:2px solid #e4e4e4}
+.zhifutt{ width:1226pxpx; height:auto; overflow:hidden; line-height:80px; font-size:20px; color:#333; padding-left:20px; background:#fff}
+.titijj{ width:1226px; height:auto; overflow:hidden; background:#fff; border-top:1px solid #e4e4e4}
+.titijj span{ display:block; float:left; height:37px; text-align:center; line-height:37px; font-size:12px; color:666; margin-left:12px}
+.xzbsni{ width:1224px; height:auto; overflow:hidden; border:1px solid #e4e4e4; padding-top:6px; padding-bottom:6px; background:#fff}
+.xzbsni ul li{ width:120px; height:50px; border-radius:6px; border:2px solid #cacace; margin-left:6px; overflow:hidden; float:left}
+.xzbsni ul li:hover{ border-color:#09f; cursor:pointer}
+.xzbsni ul li.plok{ border-color:#09f}
+.animaa{ background:#09f; color:#fff; width:100px; margin:0 auto; border-radius:6px}
+.animaa:hover{ background:#007acb}
+
+
+
+
+
+
+
+
+
+
+

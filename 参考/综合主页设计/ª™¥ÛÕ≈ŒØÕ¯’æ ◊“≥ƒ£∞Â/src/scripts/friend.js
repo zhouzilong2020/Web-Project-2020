@@ -1,0 +1,16 @@
+document.write ('<table border="0" align="center" cellpadding="0" cellspacing="0" width="90%">');
+document.write ('<tr>');
+document.write ('<td align="center"><marquee style="word-break:break-all;FONT-SIZE: 9pt; LEFT: 2px; MARGIN-LEFT: 2px; WIDTH: 100%; TOP: 2px; HEIGHT: 100px; TEXT-ALIGN: center" onMouseOver=this.stop() onMouseOut=this.start() scrollamount=1 scrolldelay=50 direction=up behavior=loop>');
+document.write ('<a href="" target=_blank title="自由天堂"><img src="images/logo.jpg " border=0 align="absmiddle" width="88" height="31" src="自由天堂"></a><br>');
+document.write ('</marquee></td>');
+document.write ('</tr>');
+document.write ('<tr><td align="center" height="5"></td></tr>');
+document.write ('<tr><td align="center">');
+document.write ('<select name="textfriend" onChange="if(this.selectedIndex) window.open(this.options[this.selectedIndex].value);" style="width:150">');
+document.write ('<option value="">--文字连接站点--</option>');
+document.write ('</select></td>');
+document.write ('</tr>');
+document.write ('<tr><td align="center" height="5"></td></tr>');
+document.write ('<tr><td align="center" height="25"><a href="#" onclick="javascript:window.open(\'/app_link.asp\',\'\',\'height=320,width=550\')">申请连接</a>??<a href="#" target="_blank">更多连接</a></td>');
+document.write ('</tr>');
+document.write ('</table>');

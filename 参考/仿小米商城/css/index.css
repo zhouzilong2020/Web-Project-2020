@@ -1,0 +1,234 @@
+*{margin:0; padding:0; list-style:none; border:0; text-decoration:none; font-family:"微软雅黑"}
+/*顶部菜单*/
+.dy1{ width:100%; height:40px; background:#333}
+.dy2{ width:1226px; height:40px;margin:0 auto; position:relative}
+.dy3{ float:left}
+.dy3 li,.dy4 li{ float:left; padding-left:12px; height:40px;overflow:hidden}
+.dy3 li a,.dy4 li a{ display:block; color:#b0b0b0; font-size:12px; height:80px; line-height:40px; text-decoration:none}
+.dy3 li a:hover,.dy4 li a:hover{ color:#fff; margin-top:-40px; transition:all 0.3s}
+.dy4{ float:right}
+.dy5{ float:right; display:block; width:120px; height:40px; line-height:40px; text-align:center; font-size:12px; color:#b0b0b0; margin-left:12px; position:relative}
+.dy5:hover{ color:#FF6700}
+.dy6{ width:223px;position:absolute; top:40px; right:0; background:#FFF; box-shadow:0 2px 2px rgba(0,0,0,0.1);overflow:hidden; display:none; z-index:100000}
+.dy6 ul li{ width:223px;height:48px; padding-top:6px; box-shadow:0 2px 2px rgba(110,110,110,0.1)}
+.dy6 ul li b{ display:block; width:48px; height:48px; margin-left:12px; float:left}
+.dy6 ul li b img{ display:block; width:48px; height:48px}
+.dy7{ display:block; height:48px; line-height:48px; font-size:12px; float:left; margin-left:6px; color:#666; width:121px; text-align:center; white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+.dy7:hover{ text-decoration:underline}
+.dy8{ display:block; height:48px; line-height:48px; font-size:12px; margin-left:6px; float:left; color:#666}
+.dy8:hover{ color:#FF6700}
+.dy9{ width:110px; height:110px; box-shadow:0 2px 2px rgba(0,0,0,0.1); position:absolute; top:40px; left:30px; overflow:hidden; display:none; z-index:1000; background:#fff}
+.dy9 img{ display:block; width:90px; height:90px; margin-left:10px; margin-top:10px}
+.dy10{ width:1226px; height:60px; margin:0 auto; overflow:hidden; margin-top:15px}
+.dy11{ width:364px; height:60px; float:left}
+.dy11 img{ display:block; width:364px; height:60px}
+.dy12{ width:570px; height:36px; border:1px solid #333; float:right; margin-top:11px; margin-right:40px; overflow:hidden}
+.dy13{ width:120px; height:45px; float:right; overflow:hidden; margin-top:7px; z-index:-1; position:relative; }
+.dy13 embed{ position:absolute; top:0; left:0}
+/*logo加时间加搜索框*/
+.shousuo{ color:#b0b0b0; font-size:12px}
+.shousuo:hover{ color:#fff}
+/*全部商品分类*/
+.qbspfl{ width:1226px; height:40px; border-bottom:2px solid #111; margin:0 auto; overflow:hidden; margin-top:20px}
+.djfl{ float:left; text-align: center; line-height:40px; font-size:16px; color:#FFF; background:#111; height:40px; width:234px; cursor:pointer}
+.morelist{ float:left; height:40px}
+.morelist a{ display:block; padding-left:30px; padding-right:15px; color:#111; float:left; line-height:40px; font-size:16px}
+.morelist a:hover{ color:#09f}
+/*帝云周边啊*/
+.dy14{ width:1226px; height:auto; margin:0 auto; margin-top:12px; overflow:hidden}
+.dy15{ width:234px; height:auto; float:left}
+.dy15 ul li{ width:78px; height:80px; float:left; background:#111; overflow:hidden}
+.dy15 ul li a{ display:block; width:100%; height:160px; line-height:80px; color:#b0b0b0; font-size:12px; text-align:center; text-decoration:none}
+.dy15 ul li:hover a{ margin-top:-80px; transition:all 0.5s; color:#FFF}
+.dy16{ width:990px; height:auto; float:right}
+.dy16 ul li{ width:318px; height:160px; background:#fff; float:left; margin-left:12px}
+.dy16 ul li a{ width:100%; height:160px; overflow:hidden; display:block}
+.dy16 ul li a img{ display:block; width:100%; height:160px}
+.dy16 ul li:hover{ box-shadow: 0 3px 6px rgba(0,0,0,0.1)}
+.dy16 ul li:hover a{animation: 0.7s czzo ease-in 1;-webkit-animation: 0.7s czzo ease-in 1;-ms-animation: 0.7s czzo ease-in 1;-moz-animation: 0.7s czzo ease-in 1;-o-animation: 1.2s czzo ease-in 1}
+@keyframes czzo{
+	0%{ margin-top:0}
+	13%{ margin-top:-10px}
+	26%{ margin-top:0}
+	39%{ margin-top:-8px}
+	52%{ margin-top:0}
+	65%{ margin-top:-6px}
+	78%{ margin-top:0px}
+	91%{ margin-top:-3px}
+	100%{ margin-top:0px}
+	}
+@-webkit-keyframes czzo{
+	0%{ margin-top:0}
+	13%{ margin-top:-10px}
+	26%{ margin-top:0}
+	39%{ margin-top:-8px}
+	52%{ margin-top:0}
+	65%{ margin-top:-6px}
+	78%{ margin-top:0px}
+	91%{ margin-top:-3px}
+	100%{ margin-top:0px}
+	}
+@-ms-keyframes czzo{
+	0%{ margin-top:0}
+	13%{ margin-top:-10px}
+	26%{ margin-top:0}
+	39%{ margin-top:-8px}
+	52%{ margin-top:0}
+	65%{ margin-top:-6px}
+	78%{ margin-top:0px}
+	91%{ margin-top:-3px}
+	100%{ margin-top:0px}
+	}
+@-moz-keyframes czzo{
+	0%{ margin-top:0}
+	13%{ margin-top:-10px}
+	26%{ margin-top:0}
+	39%{ margin-top:-8px}
+	52%{ margin-top:0}
+	65%{ margin-top:-6px}
+	78%{ margin-top:0px}
+	91%{ margin-top:-3px}
+	100%{ margin-top:0px}
+	}			
+@-o-keyframes czzo{
+	0%{ margin-top:0}
+	13%{ margin-top:-10px}
+	26%{ margin-top:0}
+	39%{ margin-top:-8px}
+	52%{ margin-top:0}
+	65%{ margin-top:-6px}
+	78%{ margin-top:0px}
+	91%{ margin-top:-3px}
+	100%{ margin-top:0px}
+	}	
+/*推荐商品轮播的*/
+.kongzhianniu{ width:1225px; height:340px; margin:0 auto; position:relative; margin-top:50px}
+.lunbobanner{ width:1225px; height:340px;position:relative; overflow:hidden}
+.lunboimg{ width:100000px; height:340px;float:left; position:absolute}
+.lunboimg li{ width:1225px; height:340px; float:left}
+.btnl{ width:35px; height:25px; background:rgba(0,0,0,0.8); position:absolute; top:-28px; right:37px; text-align:center; line-height:25px; font-size:20px; font-family:"宋体"; color:#666; cursor: pointer} 
+.btnr{ width:35px; height:25px; background:rgba(0,0,0,0.8); position:absolute; top:-28px; right:0; text-align:center; line-height:25px; font-size:20px; font-family:"宋体"; color:#666; cursor: pointer} 
+.btnl:hover{ color:#fff; background:rgba(0,0,0,1)}
+.btnr:hover{ color:#fff; background:rgba(0,0,0,1)}
+.lunboimg li a{ display:block; width:233px; height:340px; background:#fafafa; float:left; margin-left:10px}  
+.lunboimg li a b{ width:100%; height:217px; display:block;text-align:center; line-height:380px}
+.lunboimg li a b img{ width:80; height:80%}
+.lunboimg li a h5{ text-align:center; font-weight:100; font-size:16px; color:#000}
+.lunboimg li a p{ text-align:center; font-size:12px; color:#b0b0b0; margin-top:10px}
+.lunboimg li a span{ text-align:center; display:block; width:100%; font-size:12px; color:#000; margin-top:10px} 
+.lunboimg li a:hover{animation: 0.7s czzo ease-in 1;-webkit-animation: 0.7s czzo ease-in 1;-ms-animation: 0.7s czzo ease-in 1;-moz-animation: 0.7s czzo ease-in 1;-o-animation: 1.2s czzo ease-in 1}
+.guanfangremai{ position:absolute; top:-26px; left:0; font-family:"微软雅黑"; color:#333; font-size:16px}
+/*其他商品 */
+.dy17{ width:100%; height:auto; background:#f8f8f8; margin-top:30px; overflow:hidden; position:relative; padding-top:10px; padding-bottom:100px}
+.dy19{ position:fixed; top:50%; left:50%; width:80px; background:#111; margin-left:-704px;padding:6px 0; display:none}
+.dy19 a{ display:block; width:100%; text-align:center; height:28px; line-height:28px; color:#b0b0b0; font-size:12px}
+.dy19 .danb{ color:#fff}
+.dy19 a:hover{ color:#fff}
+.dy18{ width:1226px; height:auto;margin:0 auto; margin-top:24px} 
+.dy20{ width:100%; height:30px; overflow:hidden; border-bottom:1px solid #000}
+.dy20 h3{ font-size:16px;color:#333; float:left; display:block; line-height:30px}
+.dy20 a{ display:block; float:right; line-height:30px; font-size:14px; color:#333; padding-left:10px; padding-right:10px;} 
+
+.dy21{ width:1226px; height:614px; overflow:hidden} 
+.dy22{ width:234px; height:604px; float:left; margin-top:5px}
+.dy24{ width:234px; height:302px}
+.dy24 a{ display:block; width:234px; height:302px; overflow:hidden}
+.dy25{ width:234px; height:302px;overflow:hidden; background:#fff} 
+.dy25 ul{ width:224px; margin:0 auto}
+.dy25 ul li{ width:108px; height:37px;float:left; margin-top:6px; margin-left:1px}
+.dy25 ul li a{ display:block; width:100%; height:20px; font-size:16px; color:#555; line-height:20px}
+.dianpud:hover{ text-decoration:underline}
+
+
+.dy23{ width:980px; height:604px; float:right;margin-top:5px; display:block}
+.pinpai{ width:980px; height:604px; float:right;margin-top:5px}
+.xxddh{ width:980px; height:30px; float:right}
+.bigrongqi ul li{ width:235px; height:298px;float:left; margin-left:8px; margin-bottom:8px}
+.bigrongqi ul li a{ display:block; width:235px; height:278px; background:#fff; transition:all 0.3s; text-align:center; position:relative}
+
+.bigrongqi ul li a b{ display:block; width:100%; height:220px}
+.bigrongqi ul li a b img{ display:block;height:220px; margin:0 auto}
+.bigrongqi ul li a h2{ text-align:center; font-size:16px; color:#111; font-weight:100}
+.bigrongqi ul li a p{ text-align:center; font-size:12px; color:#b0b0b0}
+.bigrongqi ul li a span{ color:#F00; font-size:12px} 
+.bigrongqi ul li a em{ display:block; width:100%; height:72px; background:#111; position:absolute; bottom:-90px; transition:all 0.3s; font-size:12px; color:#FFF; line-height:20px}
+.bigrongqi ul li a em i{ font-style:normal; color:#09F} 
+.bigrongqi ul li a:hover em{ bottom:0} 
+/*页脚*/
+/*footer*/	
+	
+.footer{
+	background:#333;
+	border-top:1px solid #bebebe;
+    padfding-top:50px
+	padding-bottom:70px;
+	}
+	
+.lian{
+	overflow:hidden;
+	}	
+.lian li{
+	float:left;
+	margin:26px 46px 50px;
+	}
+	
+.lian li p{
+	font-size:16px;
+	color:#666666;
+	line-height:24px;
+	margin-bottom:16px;
+	}	
+	
+.lian li p img{
+	float:left;
+	margin-right:10px;
+	}	
+	
+.lian li a{
+	font-size:12px;
+	color:#999999;
+	display:block;
+	line-height:24px;
+	padding-left:34px;
+	}	
+	
+.lian li a:hover{
+	text-decoration:underline;
+	}	
+
+.adv{
+	overflow:hidden;
+	padding:0 43px;
+	margin-bottom:50px;
+	}
+	
+.adv li{
+	float:left;
+	font-size:18px;
+	color:#666666;
+	line-height:28px;
+	border-right:1px solid #b2b2b2;
+	padding:0 78px;
+	}	
+	
+.adv li img{
+	float:left;
+	margin-right:14px;
+	}	
+	
+.ad{
+	font-size:12px;
+	color:#999999;
+	line-height:22px;
+	text-align:center;
+	}
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

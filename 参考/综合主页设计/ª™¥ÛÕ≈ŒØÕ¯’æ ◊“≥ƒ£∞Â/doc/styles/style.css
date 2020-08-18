@@ -1,0 +1,55 @@
+.a_link {
+	COLOR: #3366cc
+}
+.btnA {
+	BORDER-RIGHT: #404040 1px solid; BORDER-TOP: #ffffff 1px solid; FONT-SIZE: 12px; BORDER-LEFT: #ffffff 1px solid; WIDTH: 40px; CURSOR: hand; COLOR: #202020; BORDER-BOTTOM: #404040 1px solid; FONT-FAMILY: "宋体"; HEIGHT: 18px; BACKGROUND-COLOR: #eeeeee
+}
+.btnA_Over {
+	BORDER-RIGHT: #404040 1px solid; BORDER-TOP: #ffffff 1px solid; FONT-SIZE: 12px; BORDER-LEFT: #ffffff 1px solid; WIDTH: 40px; CURSOR: hand; COLOR: #495e6e; BORDER-BOTTOM: #404040 1px solid; FONT-FAMILY: "宋体"; HEIGHT: 18px; BACKGROUND-COLOR: #ffffff
+}
+.iptA {
+	BORDER-RIGHT: #606060 1px solid; BORDER-TOP: #606060 1px solid; FONT-SIZE: 12px; BACKGROUND: #ffffff; BORDER-LEFT: #606060 1px solid; COLOR: #505050; BORDER-BOTTOM: #606060 1px solid; FONT-FAMILY: "宋体"; HEIGHT: 18px
+}
+.iptA_Over {
+	BORDER-RIGHT: #606060 1px solid; BORDER-TOP: #606060 1px solid; FONT-SIZE: 12px; BACKGROUND: #f6faff; BORDER-LEFT: #606060 1px solid; COLOR: #202020; BORDER-BOTTOM: #606060 1px solid; FONT-FAMILY: "宋体"; HEIGHT: 18px
+}
+BODY {
+	BACKGROUND-POSITION: center 50%; FONT-SIZE: 12px; BACKGROUND-ATTACHMENT: fixed; BACKGROUND-REPEAT: repeat-y; FONT-FAMILY: "宋体"; BACKGROUND-COLOR: #0099FF
+}
+A {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #999999; TEXT-DECORATION: underline
+}
+TD {
+	FONT-SIZE: 12px; SCROLLBAR-ARROW-COLOR: #666666; FONT-FAMILY: "宋体"; SCROLLBAR-DARKSHADOW-COLOR: #eeeeee; SCROLLBAR-BASE-COLOR: #f0faff
+}
+TR {
+	FONT-SIZE: 12px; SCROLLBAR-ARROW-COLOR: #666666; FONT-FAMILY: "宋体"
+}
+TABLE {
+	BORDER-COLLAPSE: collapse
+}
+.iptB {
+	FONT-SIZE: 12px; HEIGHT: 16px; BACKGROUND-COLOR: #f3f3f3
+}
+.LoginInput {
+	BORDER-RIGHT: #eeeeee 1px solid; BORDER-TOP: #999999 1px solid; FONT: 12px "宋体", "Verdana", "Arial"; BORDER-LEFT: #999999 1px solid; BORDER-BOTTOM: #eeeeee 1px solid; HEIGHT: 17px; BACKGROUND-COLOR: #f6f6f6
+}
+TEXTAREA {
+	BORDER-RIGHT: #eeeeee 1px solid; BORDER-TOP: #cdcdcd 1px solid; FONT: 12px "宋体","Arial"; BORDER-LEFT: #cdcdcd 1px solid; BORDER-BOTTOM: #eeeeee 1px solid; BACKGROUND-COLOR: #f6f6f6
+}
+.question {
+	BORDER-RIGHT: medium none; BORDER-TOP: medium none; FONT-WEIGHT: normal; FONT-SIZE: 12px; BORDER-LEFT: medium none; LINE-HEIGHT: normal; BORDER-BOTTOM: medium none; FONT-STYLE: normal; FONT-FAMILY: "宋体", "Verdana", "Arial"; BACKGROUND-COLOR: #f6f6f6
+}
+.keyworld {
+	COLOR: #ff0000; BACKGROUND-COLOR: #ffff00
+}
+.FontSize1 {
+	FONT-SIZE: 9pt
+}
+.FontSize2 {
+	
+}
+.style1 {color: #FFFFFF}

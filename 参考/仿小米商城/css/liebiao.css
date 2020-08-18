@@ -1,0 +1,47 @@
+/*筛选属性栏*/
+.shaixuan{ width:1224px; height:auto; overflow:hidden; margin:0 auto; border:1px solid #cacace; margin-top:12px; background:#cacace; border-bottom: hidden}
+.sxfenlei{ width:1224px; height:auto; overflow:hidden; margin:0 auto;background:#f3f3f3; margin-bottom:1px}
+.sxname{ width:120px; height:auto; font-size:14px; color:#666; line-height:30px; float:left; text-align:center}
+.sxleibie{ width:1104px; height:auto; float:right; background:#fff; position:relative}
+.liebiaoyi{ width:1104px; overflow:hidden}
+.liebiaoyi_w{ width:1104px; overflow:hidden; padding-bottom:10px}
+.liebiaoyi_w em{ display:block; width:100%; height:35px; line-height:35px; position:absolute; top:0; left:0; text-align:center; line-height:35px; color:#fff; font-size:14px; display:none; background:#111}
+.liebiaoyi li{ float:left; overflow:hidden}
+.liebiaoyi_w li{ float:left; overflow:hidden}
+.liebiaoyi li a{ padding-left:10px; padding-right:10px; font-size:12px; line-height:30px; color:#111}
+.liebiaoyi_w li a{ display:block; margin-top:8px; width:88px; height:35px; position:relative}
+.liebiaoyi_w li a:hover img{ display:none}
+.liebiaoyi_w li a:hover em{ display:block}
+.liebiaoyi li a:hover{ color:#09F}
+.liebiaoer{ width:1104px;overflow:scroll; overflow-X:hidden; display:none; border-top:1px solid #cacace; max-height:90px}
+.liebiaoer_w{ width:1104px; height:90px; overflow:scroll; overflow-X:hidden; display:none; border-top:1px solid #cacace}
+.liebiaoer li{ float:left}
+.liebiaoer_w li{ float:left}
+.liebiaoer li a{ padding-left:10px; padding-right:10px; font-size:12px; line-height:30px; color:#111}
+.liebiaoer_w li a{ display:block; margin-top:8px; position:relative; width:88px; height:35px}
+.liebiaoer_w li a em{ display:block; width:100%; height:35px; line-height:35px; position:absolute; top:0; left:0; text-align:center; line-height:35px; color:#fff; font-size:14px; display:none; background:#111}
+.liebiaoer_w li a:hover img{ display:none}
+.liebiaoer_w li a:hover em{ display:block}
+.liebiaoer li a:hover{ color:#09F}
+.zdguanbi{ display:block; line-height:20px; font-size:12px; cursor: pointer; color:#666; height:20px; border:1px solid #cacace; width:70px; text-align:center; position:absolute; top:34px; left:-97px; background:#FFF}
+/*分类搜索*/
+.zhxlxp{ width:1224px; height:30px; background:#F3F3F3; margin:0 auto; border:1px solid #cacace; margin-top:12px}
+.zhxlxp span{ display:block; width:100px; height:30px; font-size:12px; line-height:30px; margin-left:10px;cursor:pointer; border-right:1px solid #cacace; text-align:center; float:left; color:#666}
+.zhxlxp a{ display:block; padding-left:10px; padding-right:10px; float:left; font-size:12px; color:#666; line-height:30px; border-right:1px solid #cacace}
+.zhxlxp a:hover{ color:#fff; background:#000}
+/*商品列表*/
+.shopliebiao{ width:1226px; height:auto; overflow:hidden; margin:0 auto; margin-top:12px}
+.shopliebiao ul{ width:1225px; height:auto; overflow:hidden}
+.shopliebiao ul li{ width:239px; height:296px; float:left; margin-left:5px; overflow:hidden; position:relative}
+.shopliebiao ul li .wocaca{ display:block; position:absolute; background:#f17066; bottom:-36px; left:0; width:239px; height:36px; overflow:hidden; transition:all 0.3s}
+.shopliebiao ul li:hover .wocaca{ bottom:0}
+.wocaca a{ display:block; width:118px; height:36px; line-height:36px; float:left; text-align:center; color:#fff; font-size:16px; border-right:1px solid #fff}
+.shopliebiao ul li .wocici{ display:block; width:239px; height:296px; text-align:center; position: relative}
+.shopliebiao ul li .wocici b{ display:block; width:100%; height:220px}
+.shopliebiao ul li .wocici b img{ display:block; height:220px; margin:0 auto}	
+.shopliebiao ul li .wocici h2{color:#111; font-size:16px; font-weight:100}	
+.shopliebiao ul li .wocici p{ font-size:12px; color:#b0b0b0}	
+.shopliebiao ul li .wocici span{ font-size:12px; color:#f00; text-align:center; width:100%; height:20px; line-height:20px; display:block}	
+	
+.shopliebiao ul li:hover{ box-shadow: 0 3px 6px rgba(0,0,0,0.1)}
+.tuijiansp{ width:100%; height: auto; overflow:hidden; padding-bottom:100px}

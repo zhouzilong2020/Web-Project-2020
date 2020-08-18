@@ -1,0 +1,165 @@
+*{margin:0; padding:0; list-style:none; border:0; text-decoration:none; font-family:"微软雅黑"; font-style:normal}
+.thetoubu{ width:100%; height: auto; background:#f8f8f8; margin-top:12px; overflow:hidden; padding-bottom:60px}
+.thetoubu1{ width:1226px; height:80px; margin:0 auto}
+.thetoubu1 b{ display:block; width:60px; height:60px; border-radius:50%; float:left; overflow:hidden; border:1px solid #111; margin-top:10px}
+.thetoubu1 b img{ display:block; width:60px; height:60px}
+.thetoubu1 em{ display:block; padding-left:20px; padding-right:20px; float:left; line-height:80px; font-size:14px; color:#111}
+.thetoubu1 a{display:block; padding-left:20px; padding-right:20px; float:left; line-height:80px; font-size:14px; color:#09f}
+.thetoubu1 a:hover{ color:#F00}
+.thetoubu1 h5{ display:block; padding-left:20px; float:left; line-height:80px; font-size:14px; color:#666; font-weight:100}
+.thetoubu1 strong{ display:block;float:left; line-height:80px; font-size:14px; color:#f00}
+.thetoubu1 span{ display:block; width:200px; height:12px; margin-top:35px; background:#fff; border-radius:6px; position:relative; overflow:hidden; float:left; margin-left:6px}
+.thetoubu1 span p{ width:200px; height:12px; background:url(../img/member_pics.png) no-repeat left; position:absolute; top:0; left:0}
+.xiangxilbnm{ width:1226px; height:auto; overflow:hidden; margin:0 auto}
+.liefyu{ width:234px; float:left; overflow:hidden}
+.liefyu h2{ display:block; background:rgba(0,66,255,0.1); width:234px; height:40px; font-size:20px; text-align:center; line-height:40px; color:#333; box-shadow:0 2px 2px rgba(0,0,0.1); cursor:pointer}
+.liefyu h2:hover{background:rgba(0,66,255,0.2)}
+.liefyu .conb{ width:234px; height:auto; overflow:hidden}
+.liefyu .conb a{ display:block; width:234px; height:40px; line-height:40px; text-align:center; font-size:14px; background:#FFF; color:#666; box-shadow:0 2px 2px rgba(0,0,0.1)}
+.liefyu .conb a:hover{ background:rgba(0,66,255,0.1)}
+.zuirifip{ width:980px; float:right; height:auto; overflow:hidden; padding-bottom:10px}
+.zuiriftp1{ width:980px; height:auto; overflow:hidden; background:#fff}
+.zuiriftp1 ul li{ height:auto; float:left; overflow:hidden}
+.zuiriftp1 ul li span{display:block; width:245px; height:30px; text-align:center; line-height:30px; font-size:14px; color:#666}
+.zuiriftp1 ul li p{ display:block; width:245px; height:20px; line-height:20px; font-size:14px; color:#f00; text-align:center}
+.dfdaspjtk{ width:980px; height:auto; overflow:hidden; background:#FFF; margin-top:10px; padding-bottom:10px}
+.dfdaspjtk a{ display:block; line-height:30px; padding-left:20px; padding-right:20px; float:left; font-size:14px; color:#333}
+.dfdaspjtk a s{ color:#F00}
+.dfdaspjtk a:hover{ color:#09f; text-decoration:underline}
+.sydlbdzz{ width:980px; height:auto; overflow:hidden; margin-top:10px}
+.gzdlbdzzl{ width:980px; height:auto; overflow:hidden; margin-bottom:6px; background:#FFF; padding-top:10px; padding-bottom:10px;background: rgba(0,66,255,0.2);}
+.spzhaopin{ width:80px; height:80px; overflow:hidden; float:left; margin-left:10px}
+.spzhaopin img{ display:block; width:80px; height:80px}
+.youstdongi{ width:510px; height:auto;float:left; overflow:hidden; padding-left:10px; padding-right:10px}
+.youstdongi a:hover{ text-decoration:underline}
+.youstdongi h5{ width:100%; height:auto; font-size:12px; color:#333; line-height:20px}
+.youstdongi span{ display:block; width:100%; line-height:20px; font-size:12px}
+.quzhifubasb{ width:184px; height:auto; float:left}
+.quzhifubasb a{ display:block; width:118px; height:34px; text-align:center; line-height:34px; border:1px solid #09f; font-size:14px; margin-left:32px; margin-top:35px; color:#551a8b}
+.quzhifubasb a:hover{ background:rgba(0,66,255,0.1)}
+.chakanxiangqingfg{ width:160px; height:auto; float:left}
+.chakanxiangqingfg a{ display:block; width:118px; height:34px; text-align:center; line-height:34px; border:1px solid #09f; font-size:14px; margin-left:20px; margin-top:35px; color:#551a8b}
+.chakanxiangqingfg a:hover{ background:rgba(0,66,255,0.1)}
+.wofrgwcjb{ width:980px; background:#FFF; height:120px; margin-top:10px; overflow:hidden; padding-top:6px; padding-bottom:6px}
+.wofrgwcjb ul li{ width:182px; height:120px;float:left; margin-left:10px; border:1px solid #cacace}
+.qsbqmzb:hover{ text-decoration:underline}
+.wofrgwcjb ul li a{ display:block; width:182px; height:100px}
+.wofrgwcjb ul li a b{ width:182px; height:60px; overflow:hidden; display:block; margin:0 auto}
+.wofrgwcjb ul li a b img{ display:block; width:80px; height:60px; margin:0 auto}
+.wofrgwcjb ul li a h5{ text-align:center; font-size:14px; color:#111; font-weight:100}
+.wofrgwcjb ul li a span{ display:block; width:100%; line-height:20px; text-align:center; font-size:12px; color:#f00}
+.wofrgwcjb ul li:hover{ border-color:#f00}
+.wotrfrgwcjb{ width:980px; height:120px; overflow:hidden; background:#fff; padding-top:10px; padding-bottom:6px}
+.wotrfrgwcjb ul li{ width:100px; height:120px; float:left; margin-left:20px}
+.wotrfrgwcjb ul li a{ display:block; width:100px; height:120px; overflow:hidden}
+.wotrfrgwcjb ul li a img{ width:100px; height:100px; display:block; border-radius:50%}
+.wotrfrgwcjb ul li a h5{ display:block; width:100%; height:20px; line-height:20px; font-size:12px; text-align:center}
+.wotrfrgwcjb ul li:hover a{ box-shadow: 0 0 3px 3px rgba(0,0,0,0.1)}
+.adressdeliebi{ width:980px; height: auto; overflow:hidden; margin-top:12px; background:#fff}
+.adressfive{ width:980px; overflow:hidden; height:auto; padding-bottom:6px}
+.adressfive div{ float:left;}
+.adressfive div span{ display:block; padding-right:40px; padding-left:20px; font-size:12px;height:30px; line-height:30px; color:#999}
+.adressfive div p{ display:block; padding-right:20px; padding-left:20px; font-size:12px; padding-right:20px; color:#999}
+.adressfive div a{ display:block; font-size:12px; float:left; padding-left:6px; color:#09f}
+.adressfive div a:hover{ color:#F00}
+.zcznmdfc{ position:fixed; width:100%; height:100%; background:rgba(255,255,255,0); z-index:999; top:0; left:0; display:none}
+.basedexinxi{ width:980px; height:60px; background:#FFF}
+.basedexinxi a{ display:block; padding-left:20px; padding-right:20px; float:left; font-size:14px; color:#09f; height:38px; line-height:38px; margin-top:10px; margin-left:20px}
+.baseopxg{ width:980px; height:auto; overflow:hidden; margin-top:12px; background:#fff; padding-bottom:10px}
+.tirstbf{ width:940px; height:160px; overflow:hidden; margin:0 auto; border-bottom:1px dashed #cacace}
+.tirstbf span{ display:block; width:120px; height:120px; border:5px solid rgba(0,66,255,0.1); border-radius:50%; overflow:hidden; position:relative; margin-top:20px; float:left}
+.tirstbf span img{ display:block; width:120px; height:120px;}
+.tirstbf span a{ position:absolute; background:rgba(0,0,0,0.2); display:block; width:100%; height:20px; line-height:20px; color:#fff; text-align:center; bottom:0; left:0; font-size:12px}
+.tirstbf em{ display:block; padding-left:20px; padding-right:6px; height:20px; line-height:20px; color:#666; margin-top:70px; float:left; font-size:14px}
+.thetwobf{ width:940px; height:auto; margin:0 auto; overflow:hidden; margin-top:20px; padding-bottom:20px; border-bottom:1px dashed #cacace}
+.thetwobf em{ display:block; width:207px;height:30px; line-height:30px; color:#666; float:left; font-size:14px; text-align:right; padding-right:6px}
+.thetwobf span{ display:block; padding-left:6px; padding-right:20px; float:left; font-size:14px; height:30px; line-height:30px}
+._citys { width: 450px; display: inline-block; border: 2px solid #eee; padding: 5px; position: relative; background:#fff}
+._citys span { color: #56b4f8; height: 15px; width: 15px; line-height: 15px; text-align: center; border-radius: 3px; position: absolute; right: 10px; top: 10px; border: 1px solid #56b4f8; cursor: pointer; }
+._citys0 { width: 100%; height: 34px; display: inline-block; border-bottom: 2px solid #56b4f8; padding: 0; margin: 0; }
+._citys0 li { display: inline-block; line-height: 34px; font-size: 15px; color: #888; width: 80px; text-align: center; cursor: pointer; }
+.citySel { background-color: #56b4f8; color: #fff !important; }
+._citys1 { width: 100%; display: inline-block; padding: 10px 0; }
+._citys1 a { width: 83px; height: 35px; display: inline-block; background-color: #f5f5f5; color: #666; margin-left: 6px; margin-top: 3px; line-height: 35px; text-align: center; cursor: pointer; font-size: 13px; overflow: hidden; }
+._citys1 a:hover { color: #fff; background-color: #56b4f8; }
+.AreaS { background-color: #56b4f8 !important; color: #fff !important; }
+.thetwobf a{ background:#09f}
+.thetwobf a:hover{ background:#0089e4}
+.bdsjksla{ width:980px; height:auto; overflow:hidden; background:#FFF; margin-top:12px}
+.younowaq{ width:980px; height:auto; overflow:hidden; background:#fff; margin-top:12px}
+.younowaq span{ display:block; padding-left:20px; line-height:34px; background:rgba(0,66,255,0.1); font-size:14px; color:#09f}
+.younowaq span s{ font-size:20px; color:#F00}
+.younowaq span em{ font-weight:bold}
+.gzbangdingks{ width:980px; height:auto; margin-top:12px; overflow:hidden}
+.gzbdks{ width:980px; height:auto; overflow:hidden; margin-bottom:10px; background:#FFF}
+.gzbdks1,.gzbdks2,.gzbdks3{ height:auto; float:left; overflow:hidden}
+.gzbdks1 span{ display:block; padding-left:20px; padding-right:20px; line-height:50px; font-size:14px; color:#666}
+.gzbdks1 p{ display:block; padding-left:20px; padding-right:20px; line-height:30px; font-size:14px;}
+.gzbdks2 p{ display:block; padding-left:20px; padding-right:20px; line-height:20px; font-size:14px; width:640px; height:auto; margin-top:14px; color:#999}
+.gzbdks3 a{ display:block; width:90px; height:34px; text-align:center; line-height:34px; font-size:14px; color:#fff; margin-top:14px; margin-left:40px; box-shadow:0 0 1px 1px rgba(0,0,0,0.2)}
+.gzbdks3{ padding:2px}
+.gzbdks3 a:hover{ box-shadow:none}
+.qieken{ width:980px; height:auto; overflow:hidden; margin-top:16px}
+.qieken em{ display:block; font-size:12px; color:#666; float:left; line-height:20px; width:100px; text-align:right}
+.qieken span{ display:block; font-size:12px; color:#666; float:left; padding-left:10px; line-height:20px}
+.jhjadxcu img{ display:block; width:30px; height:30px; float:left; padding-left:20px; float:left}
+.jhjadxcu em{ display:block; padding-left:10px; line-height:30px; font-size:14px; color:#666; float:left}
+.jhjadxcu a:hover em{ text-decoration:underline}
+.jifenmingxiq{ width:980px; height:auto; overflow:hidden; margin-top:10px; background:#FFF; border-top:1px solid #cacace; border-bottom:1px solid #cacace}
+.jifenmingxiq em{ display:block; padding-left:20px;font-size:12px; color:#666; line-height:40px; float:left}
+.jifenmingxiq span{ display:block; padding-left:20px; font-size:12px; line-height:40px; float:left}
+.jifenmingxiqx{ width:980px; height:auto; overflow:hidden}
+.jifenmingxiqx ul li{ width:245px; height:30px; line-height:30px; float:left; text-align:center; font-size:12px; color:#999}
+.jifenmingxiqm{ width:980px; height:auto; overflow:hidden}
+.jifenmingxiqm ul li{ width:980px; height:auto; overflow:hidden; border-top:1px solid #cacace}
+.jifenmingxiqm ul li span{ display:block; width:245px; line-height:30px; font-size:12px; color:#999; text-align:center; float:left; padding-left:0}
+.locfre{ width:980px; height:auto; overflow:hidden; background:#FFF}
+.locfre a{ display:block; padding-left:20px; padding-right:20px; line-height:30px; color:#09f; float:left; margin-left:20px; font-size:14px; margin-bottom:5px; margin-top:5px}
+.locfre a:hover{ color:#FFF; background:#09f}
+.locfre a.zuliyesi{ color:#fff; background:#09f}
+.feizhoum{ width:980px; height:auto; overflow:hidden; background:#FFF; margin-top:12px; padding-bottom:10px}
+.feizhoum ul li{ width:232px; height:290px; margin-left:10px; margin-top:10px; float:left; position:relative; overflow:hidden}
+.feizhoum ul li img{ width:232px; height:220px}
+.feizhoum ul li span{ display:block; width:232px; height:100px; overflow:hidden; top:220px; left:0; position:absolute; background:#fff; transition:all 0.4s}
+.feizhoum ul li span a{ display:block; width:212px; line-height:20px; font-size:12px; color:#111}
+.feizhoum ul li span a:hover{ color:#f00; text-decoration:underline}
+.feizhoum ul li span em{ display:block; font-size:14px; color:#999; line-height:20px}
+.feizhoum ul li:hover span{ top:190px}
+.nanmeizhou{ width:980px; height: auto; background:#fff; border-bottom:1px solid #cacace}
+.nanmeizhou ul li{ width:960px; height:auto; overflow:hidden; margin:0 auto; border-top:1px solid #cacace; padding-top:10px; padding-bottom:10px;}
+.nanmeizhou ul li img{ display:block; width:60px; height:60px; float:left}
+.nanmeizhou ul li a{ color:#666}
+.nanmeizhou ul li a:hover{ text-decoration:underline; color:#f00}
+.paopaodg{ padding-left:12px; padding-right:12px; height:30px; line-height:30px; font-size:14px; background:#fe8300}
+.tutudg{ padding-left:12px; padding-right:12px; height:30px; line-height:30px; font-size:14px; background:#5BB75B}
+.feifeidg{ padding-left:12px; padding-right:12px; height:30px; line-height:30px; font-size:14px; background:#006DCC}
+.pipixia{ width:980px; height:auto; overflow:hidden; padding-top:10px; padding-bottom:10px; background:rgba(0,66,163,0.1); margin-top:10px}
+.pipixia span{ display:block; padding-left:20px; line-height:30px; font-size:12px; float:left; color:#111}
+.pipixia em{ display:block; padding-left:10px; line-height:30px; font-size:12px; float:left}
+.zhuzhuxia{ width:980px; height:auto; overflow:hidden; border-bottom:1px solid #cacace; background:#FFF}
+.zhuzhuxia span{ display:block; width:196px; line-height:30px; font-size:12px; color:#666; float:left; text-align:center; overflow:hidden}
+.zhuzhuxiabi{ width:980px; height:auto; overflow:hidden; border-bottom:1px solid #cacace}
+.zhuzhuxiabi span{ display:block; width:163px; height:30px; line-height:30px; font-size:12px; color:#666; float:left; text-align:center}
+.zhuzhuxiabi span a:hover{color:#f00}
+.fuwlxtk{ width:980px; height:auto; overflow:hidden; background:#fff}
+.fuwlxtk span{ display:block; padding-left:20px; line-height:40px; font-size:14px; color:#666; font-weight:bold}
+.zhuzhuxia em{ font-size:12px; line-height:20px; padding-left:30px; color:#999}
+.zhuzhuxia span p{ color:#999 ;width:196px; display:block; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; margin-left:10px; color:#111}
+.zhuzhuxia span p:hover{ color:#f00}
+.zhuzhuxia a span:hover{ color:#f00}
+.wulgdz{ display:block; padding-left:20px; padding-right:20px; line-height:32px; background:#09f; color:#fff; float:left; font-size:14px; margin-right:15px}
+.wulgdz:hover{background:#0072be}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,68 @@
+/*页脚*/
+/*footer*/	
+	
+.footer{
+	background:#333;
+	border-top:1px solid #bebebe;
+    paddding-top:50px;
+	padding-bottom:70px; margin-top:60px
+	}
+	
+.lian{
+	overflow:hidden;
+	}	
+.lian li{
+	float:left;
+	margin:26px 46px 50px;
+	}
+	
+.lian li p{
+	font-size:16px;
+	color:#666666;
+	line-height:24px;
+	margin-bottom:16px;
+	}	
+	
+.lian li p img{
+	float:left;
+	margin-right:10px;
+	}	
+	
+.lian li a{
+	font-size:12px;
+	color:#999999;
+	display:block;
+	line-height:24px;
+	padding-left:34px;
+	}	
+	
+.lian li a:hover{
+	text-decoration:underline;
+	}	
+
+.adv{
+	overflow:hidden;
+	padding:0 43px;
+	margin-bottom:50px;
+	}
+	
+.adv li{
+	float:left;
+	font-size:18px;
+	color:#666666;
+	line-height:28px;
+	border-right:1px solid #b2b2b2;
+	padding:0 78px;
+	}	
+	
+.adv li img{
+	float:left;
+	margin-right:14px;
+	}	
+	
+.ad{
+	font-size:12px;
+	color:#999999;
+	line-height:22px;
+	text-align:center;
+	}
