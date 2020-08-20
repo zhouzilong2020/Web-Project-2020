@@ -1,9 +1,12 @@
 import Vue from 'vue'
 import Axios from 'axios'
+// import qs from 'qs'
 
 const axiosInstance = Axios.create({
     withCredentials: true
 })
+
+axiosInstance.defaults.headers.post['Content-Type'] = 'application/json'; 
 
 // 通过拦截器处理csrf问题，这里的正则和匹配下标可能需要根据实际情况小改动
 axiosInstance.interceptors.request.use((config) => {
@@ -14,6 +17,18 @@ axiosInstance.interceptors.request.use((config) => {
     console.log(config);
     return config
 })
+
+// axiosInstance.interceptors.request.use((config) => {
+//     if (config.method === 'post') {
+//         if (!config.isFormData) {
+//         config.data = qs.stringify(config.data,{ indices: false })
+//         }
+//     }
+
+//     return config
+//     }, (err) => {
+//     return Promise.reject(err)
+// })
 
 axiosInstance.interceptors.response.use(
     response => {
