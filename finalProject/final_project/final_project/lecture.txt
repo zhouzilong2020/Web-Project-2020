@@ -1,4 +1,4 @@
 python3 manage.py startproject [pro_name]
 python3 manage.py startapp [appname]
 
-python3 manage.py run serve
+python3 manage.py runserver

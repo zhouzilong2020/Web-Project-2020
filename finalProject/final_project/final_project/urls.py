@@ -20,5 +20,6 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     # hello/后面是所有hello的url组成的页面
-    path('hello/', include("app.urls"))
+    # path('hello/', include("app.urls")),
+    path('api/', include("app.urls")),
 ]
