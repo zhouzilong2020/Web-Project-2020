@@ -2,7 +2,7 @@ from rest_framework import serializers
 from app.models import User
 
 
-class BooksSerializer(serializers.ModelSerializer):
+class UserSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Books
+        model = User
         fields = '__all__'

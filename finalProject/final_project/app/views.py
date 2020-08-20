@@ -2,13 +2,16 @@ from django.shortcuts import render
 from django.http import HttpResponse
 # Create your views here.
 
-# request 请求！
-def index(request):
-    # httpresponse 返回
-    return render(request, "index.html")
+# django as back end
+from rest_framework import viewsets
+from app.models import User
+from app.serializer import UserSerializer
 
-def greet(request, name):
-    # httpresponse 返回
-    return render(request, "greet.html",{
-        "name": name
-    })
+# 将返回所有的用户信息
+# 建立一个用户的视图集合
+# 实质上会通过不同的http请求做出不同的数据库操作
+class UserViewSet(viewsets.ModelViewSet):
+    # 所有的用户信息结果
+    queryset = User.objects.all()
+    # serializer的对象
+    serializer_class = UserSerializer
