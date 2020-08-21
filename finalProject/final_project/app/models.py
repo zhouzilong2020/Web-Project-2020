@@ -6,4 +6,12 @@ from django.db import models
 class User(models.Model):
     nickname = models.CharField(max_length = 32)
     account = models.CharField(max_length = 32, primary_key = True)
-    passward = models.CharField(max_length = 32)
+    password = models.CharField(max_length = 32)
+    def __str__(self):
+        return account
+
+
+
+class Comment(models.Model):
+    content = models.CharField(max_length = 256)
+    belong_account = models.ForeignKey(User, on_delete = models.CASCADE)

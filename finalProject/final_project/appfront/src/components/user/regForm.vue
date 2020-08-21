@@ -22,12 +22,13 @@
 
         <q-card-actions class="reg-form-bottom">
             <q-toggle class="accept-term" v-model="accept" label="I accept the license and terms" @input="isValidate"/>
-            <q-btn :disable="disable" border color="primary" class="full-width ">注册</q-btn>
+            <q-btn :disable="disable" border color="primary" class="full-width" @click="handleReg()" >注册</q-btn>
         </q-card-actions>
     </q-card>
 </template>
 
 <script>
+import {register} from '../../services/userService'
 export default {
     data(){
         return{
@@ -43,6 +44,13 @@ export default {
                 this.disable = false;
             }
             else this.disable = true;
+        },
+        async handleReg(){
+            register({
+                account : this.account,
+                password : this.password,
+                nickname : "1",
+            })
         }
     }
 }

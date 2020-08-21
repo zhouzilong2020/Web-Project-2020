@@ -5,9 +5,10 @@ from . import views
 from rest_framework.routers import DefaultRouter
 
 
+# DRF官方文档！！！
 # 注册url
 router = DefaultRouter()
-router.register('User', views.UserViewSet)
+router.register('user', views.UserViewSet)
 
 # 应用独立的url配置
 urlpatterns = [

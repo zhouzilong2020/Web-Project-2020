@@ -33,10 +33,10 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     # 解决跨域访问
     'corsheaders',
-    # 需要添加自己创建的应用
-    'app',
     # 解决数据库操作
     'rest_framework',
+    # 需要添加自己创建的应用
+    'app',
 
     'django.contrib.admin',
     'django.contrib.auth',
