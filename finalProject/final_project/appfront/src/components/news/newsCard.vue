@@ -14,7 +14,7 @@
                 <!-- 发布日期 -->
                 <div class="text-overline text-orange-9">{{news.pubDate}}</div>
                 <!-- 概要 -->
-                <div class="text-caption text-grey">{{content}}</div>
+                <div class="text-caption text-grey" v-if="!news.havePic" >{{content}}</div>
             </q-card-section>
 
             <!-- 加载特效 -->
@@ -92,7 +92,7 @@ export default {
             var newsContent = ""
             for(let i = 0, len = this.news.allList.length; i < len; i++){
                 if(typeof(this.news.allList[i])=="string"){
-                    if(newsContent.length + this.news.allList[i].length > 150){
+                    if(newsContent.length + this.news.allList[i].length > 200){
                         break
                     }
                     newsContent += this.news.allList[i]
