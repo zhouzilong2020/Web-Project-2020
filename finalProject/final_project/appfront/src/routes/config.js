@@ -20,7 +20,7 @@ export default{
         },{
             path:'/',
             name:'news',
-            component: ()=> import("@/components/news/newsChannel")
+            component: ()=> import("@/components/news/newsCard")
         },
     ]
 }

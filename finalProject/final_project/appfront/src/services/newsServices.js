@@ -23,17 +23,18 @@ getNewsChannels();
  * @param {*} maxResult 每一页面的上限
  */
 export async function getNews(channelId, page = 1, maxResult = 10){
-    var resp = await axios.get('http://ali-news.showapi.com/channelList',{
+    var resp = await axios.get('http://ali-news.showapi.com/newsList',{
         headers:{
             Authorization: "APPCODE " + NEWSCODE
         },
         params:{
-            needAllList:false,
+            needAllList:1,
+            needContent:1,
             channelId,
             page,
             maxResult,
         }
         
     });
-    return resp.data.showapi_res_body.pagebean.contentlist
+    return resp.data.showapi_res_body.pagebean
 }

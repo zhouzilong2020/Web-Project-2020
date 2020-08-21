@@ -29,7 +29,7 @@ export default {
         return{
             channels:[],
             selectedChannel:'',
-            isCollapsed: true, // 少现实一些数据
+            isCollapsed: true, // 折叠
             isLoading: false,
         }
     },
