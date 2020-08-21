@@ -1,25 +1,34 @@
 // 登录用户的仓库数据
+import {login, register} from "../services/userService"
 export default{
     namespaced: true,
     state: {
         userInfo: null,
-        token: '',
         isLoading: false,
     },
     mutations: {
-        setToken(state, payload) {
-            state.token = payload;
+        setUserInfo(state, payload) {
+            state.userInfo = payload;
         },
         setIsLoading(state, payload){
             state.isLoading = payload;
         },
     },
     actions: {
-        async loginUser(context){
-            context.commit("setIsLoading", true);     
+        async loginUser(context, payload){
+            context.commit("setIsLoading", true);
+            login(payload);
             setTimeout(() => {
                 context.commit("setIsLoading", false);
             }, 2000);
+        },
+        async regUser(context, payload){
+            context.commit("setIsLoading", true);     
+            var resp = register(payload);
+            if(resp.status == 201){
+                context.commit("setUserInfo", resp.data)
+            }
+            context.commit("setIsLoading", false);
         }
     },
 }

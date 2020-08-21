@@ -46,11 +46,16 @@ export default {
             else this.disable = true;
         },
         async handleReg(){
-            register({
+            var resp = await register({
                 account : this.account,
                 password : this.password,
                 nickname : "1",
-            })
+            });
+            // 建立成功
+            if(resp == 201){
+                console.log("reg success!");
+                // TODO 加入到store里面
+            }
         }
     }
 }

@@ -24,12 +24,13 @@
         
         <q-card-actions class="login-form-bottom">
             <q-toggle class="accept-term" v-model="accept" label="I accept the license and terms" @input="isValidate"/>
-            <q-btn :disable="disable" border color="primary" class="full-width ">登录</q-btn>
+            <q-btn :disable="disable" border color="primary" class="full-width" @click="handleLogin()" >登录</q-btn>
         </q-card-actions>
     </q-card>
 </template>
 
 <script>
+import {login} from "../../services/userService"
 export default {
     data(){
         return{
@@ -45,6 +46,12 @@ export default {
                 this.disable = false;
             }
             else this.disable = true;
+        },
+        async handleLogin(){
+            login({
+                account : this.account,
+                password : this.password,
+            })
         }
     }
 }
