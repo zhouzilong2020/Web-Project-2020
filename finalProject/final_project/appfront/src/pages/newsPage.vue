@@ -33,7 +33,6 @@ export default {
         async channelChange(channelId){
             this.selectedChannel = channelId;
             var respNews = await getNews(channelId)
-            this.console
             this.newsList = respNews.contentlist
         }
     },

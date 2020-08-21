@@ -9,9 +9,18 @@
             indicator-color="blue-3"
             @click="handleChange()"
         >
-            <q-tab  transition-show="jump-down" v-for="channel in showChannels" :key="channel.id"  :label="channel.name" :name="channel.name">
+            <!-- 是用声明式导航 -->
+            <q-route-tab 
+            :to="{
+                name:'newsPage',  
+                params:{
+                    channelId: channel.channelId
+                }
+
+            }" 
+            transition-show="jump-down" v-for="channel in showChannels" :key="channel.id"  :label="channel.name" :name="channel.channelId">
                 <!-- <q-badge color="red" floating>99+</q-badge> -->
-            </q-tab>
+            </q-route-tab>
         </q-tabs>
         <q-btn unelevated color="primary" :loading="isLoading" class="more" v-if="isCollapsed" icon="more_horiz" @click="handleMoreNews" />
     </div>
@@ -66,7 +75,7 @@ export default {
      * 生命周期函数，挂载组件时获取数据
      */
     async mounted(){
-        this.selectedChannel = this.channels[0].name
+        this.selectedChannel = this.channels[0].channelId
         this.$emit('channelChange', this.selectedChannel)
     }
 
