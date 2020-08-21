@@ -27,32 +27,39 @@
                 round
                 flat
                 dense
-                :icon="expanded ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
+                icon="more"
                 @click="expanded = !expanded"
                 />
             </q-card-actions>
 
             <q-separator />
 
-            <transition-group 
-            appear
-            vertical
-            enter-active-class="animated fadeIn"
-            leave-active-class="animated fadeOut"
-            >
-                <div key="content" v-if="news.allList.length>0">
-                    <div v-show="expanded"  v-for="(list,i) in news.allList" :key="i">
-                        <div  v-if="typeof(list) == 'string'" class="news-content text-caption">
-                            {{"  " + list}}
+
+            <q-dialog v-model="expanded">
+                <q-card>
+                    <q-card-section>
+                    <div class="news-content text-h4">新闻正文</div>
+                    </q-card-section>
+
+                    <q-card-section class="q-pt-none">
+                        <div key="content" v-if="news.allList.length>0">
+                            <div v-show="expanded"  v-for="(list,i) in news.allList" :key="i">
+                                <div  v-if="typeof(list) == 'string'" class="news-content text-caption">
+                                    {{"  " + list}}
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div key="empty">
-                    <div v-show="expanded" class="news-content text-caption">
-                        没有更多啦！
-                    </div>
-                </div>
-            </transition-group>
+                        <div key="empty">
+                            <div v-show="expanded" class="news-content text-caption">
+                                没有更多啦！
+                            </div>
+                        </div>    
+                    </q-card-section>
+                    <q-card-actions align="right">
+                    <q-btn flat icon="close" color="black" v-close-popup />
+                    </q-card-actions>
+                </q-card>
+            </q-dialog>
 
             <!-- 整个卡片的加载效果 -->
             <q-inner-loading :showing="isLoading">

@@ -18,7 +18,7 @@ export default{
             name:'post',
             component: ()=> import("@/components/BBS/post")
         },{
-            path:'/',
+            path:'/newsChannel/:channelId',
             name:'newsPage',
             component: ()=> import("@/pages/newsPage")
         },
