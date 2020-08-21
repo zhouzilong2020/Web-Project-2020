@@ -6,9 +6,9 @@
                 v-if="news.havePic"
                 :src="news.imageurls[0].url"
             />
-            <q-card-section>
+            <q-card-section >
                 <!-- 新闻标题 -->
-                <div class="text-h5 q-mt-sm q-mb-xs">{{news.title}}</div>
+                <div class="text-h5 q-mt-sm q-mb-xs"> <a :href="news.link" target="_blank">{{news.title}}</a></div>
                 <!-- 来源 -->
                 <div class="text-subtitle2 q-mt-sm q-mb-xs">来源:{{news.source}}</div>
                 <!-- 发布日期 -->
@@ -36,31 +36,40 @@
 
             <transition-group 
             appear
+            vertical
             enter-active-class="animated fadeIn"
             leave-active-class="animated fadeOut"
             >
-                <div key="content" >
-                    <div v-show="expanded" v-for="(list,i) in news.allList" :key="i">
+                <div key="content" v-if="news.allList.length>0">
+                    <div v-show="expanded"  v-for="(list,i) in news.allList" :key="i">
                         <div  v-if="typeof(list) == 'string'" class="news-content text-caption">
                             {{"  " + list}}
                         </div>
                     </div>
                 </div>
+                <div key="empty">
+                    <div v-show="expanded" class="news-content text-caption">
+                        没有更多啦！
+                    </div>
+                </div>
             </transition-group>
+
+            <!-- 整个卡片的加载效果 -->
+            <q-inner-loading :showing="isLoading">
+                <q-spinner-gears size="50px" color="primary" />
+            </q-inner-loading>
 
         </q-card>
     </div>
 </template>
 
 <script>
-import {getNews} from "../../services/newsServices"
+
 export default {
     data () {
         return {
             expanded: false,
-            // newsList : null,
-            // news: null,
-            // content:"",
+            isLoading: false,
         }
     },
     props:{
@@ -76,7 +85,7 @@ export default {
             var newsContent = ""
             for(let i = 0, len = this.news.allList.length; i < len; i++){
                 if(typeof(this.news.allList[i])=="string"){
-                    if(newsContent.length + this.news.allList[i].length > 100){
+                    if(newsContent.length + this.news.allList[i].length > 150){
                         break
                     }
                     newsContent += this.news.allList[i]
@@ -88,19 +97,11 @@ export default {
     /**
      * 创建
      */
-    async created(){
-        var resp = await getNews('5572a108b3cdc86cf39001cd')
-        this.newsList = resp
-        this.news = resp.contentlist[6]
-        for(let i = 0, len = this.news.allList.length; i < len; i++){
-            if(typeof(this.news.allList[i])=="string"){
-                if(this.content.length + this.news.allList[i].length > 100){
-                    break
-                }
-                this.content += this.news.allList[i]
-            }
-        }
-        console.log(this.news)
+    created(){
+        this.isLoading = true
+        setTimeout(() => {
+            this.isLoading = false;
+        }, 2000);
     }
 
 
@@ -108,9 +109,10 @@ export default {
 </script>
 
 <style scoped>
+a {color:#07519A; text-decoration: none}a:hover {color: #FF6600; text-decoration: underline}
 .news-card{
   width: 100%;
-  max-width: 350px
+  max-width: 350px;
 }
 .image{
     width:100%;

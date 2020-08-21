@@ -19,8 +19,8 @@ export default{
             component: ()=> import("@/components/BBS/post")
         },{
             path:'/',
-            name:'news',
-            component: ()=> import("@/components/news/newsCard")
+            name:'newsPage',
+            component: ()=> import("@/pages/newsPage")
         },
     ]
 }
