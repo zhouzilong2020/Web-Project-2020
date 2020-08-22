@@ -4,8 +4,7 @@
             <div class="news-channels">
                 <news-channel :channels="channels" @channelChange="channelChange"/>
             </div>
-
-            <div class="news-cards flex justify-around ietms-center bg-grey-1" >
+            <div class=" news-cards flex justify-around ietms-center bg-grey-1" >
                 <news-card class="news-card" v-for="news in newsList.contentlist" :key="news.id" :news="news" />
             </div>       
         </div>
@@ -29,8 +28,6 @@
 <script>
 import newsCard from "../components/news/newsCard"
 import newsChannel from "../components/news/newsChannel"
-
-
 
 import {getNewsChannels, getNews} from '../services/newsServices'
 
@@ -80,7 +77,7 @@ export default {
 </script>
 
 <style scoped>
-.news-channels{float: left; max-width: 100px; margin-top:0px}
+.news-channels{float: left; max-width: 15%; margin-top:0px}
 .news-cards{max-width: 85%;  border: 3px solid white; margin:0 auto; border-radius: 20px;}
 .news-pagination{bottom: 0px; float: left;}
 </style>

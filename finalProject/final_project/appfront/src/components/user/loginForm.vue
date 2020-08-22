@@ -1,11 +1,9 @@
 <template>
-    <q-card class="login-form bg-grey text-white">
+    <q-card class="fixed-center login-form bg-grey text-white">
         <q-card-section class="head">
             <div class="head-title text-h4">GoodRead</div>
             <div class="head-subtitle text-subtitle2">身份认证</div>
         </q-card-section>
-
-
 
         <q-card-section class="login-form-input">
             <q-input outlined v-model="account" label="用户名" :rules="[val => !!val || '请输入用户名']" @input="isValidate">
@@ -26,11 +24,16 @@
             <q-toggle class="accept-term" v-model="accept" label="I accept the license and terms" @input="isValidate"/>
             <q-btn :disable="disable" border color="primary" class="full-width" @click="handleLogin()" >登录</q-btn>
         </q-card-actions>
+
+        <!-- 加载 -->
+        <q-inner-loading :showing="isLoading">
+            <q-spinner size="50px" color="primary" />
+        </q-inner-loading>
     </q-card>
 </template>
 
 <script>
-import {login} from "../../services/userService"
+import {mapState} from "vuex"
 export default {
     data(){
         return{
@@ -48,12 +51,22 @@ export default {
             else this.disable = true;
         },
         async handleLogin(){
-            login({
+            var payload = {
                 account : this.account,
-                password : this.password,
+                password : this.password
+            }
+            this.$store.dispatch("userInfo/loginUser",payload).then(()=>{
+                if(this.userInfo && this.isLoading){
+                    console.log("ASDasdasdasdasdasdas")
+                    this.$router.push({
+                        name:"newsPage"
+                    })
+                }
             })
-        }
-    }
+        },
+    },
+    computed: mapState("userInfo", ["isLoading", "userInfo"]),
+
 }
 </script>
 
@@ -62,7 +75,7 @@ export default {
 .head-subtitle{padding-top:10px}
 
 
-.login-form{width:320px; height: 480px}
+.login-form{width:320px; height: 480px;  position: center;}
 .login-form .login-form-input{width:300px; margin: 0 auto;}
 
 .login-form .refund {padding-left:30px; font-size:1em;}

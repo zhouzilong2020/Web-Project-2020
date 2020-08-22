@@ -1,5 +1,5 @@
 <template>
-    <q-card class="reg-form bg-grey text-white">
+    <q-card  class=" fixed-center reg-form bg-grey text-white">
         <q-card-section class="head">
             <div class="head-title text-h4">GoodRead</div>
             <div class="head-subtitle text-subtitle2">注册用户</div>
@@ -29,11 +29,18 @@
             <q-toggle class="accept-term" v-model="accept" label="I accept the license and terms" @input="isValidate"/>
             <q-btn :disable="disable" border color="primary" class="full-width" @click="handleReg()" >注册</q-btn>
         </q-card-actions>
+
+        <!-- 加载 -->
+        <q-inner-loading :showing="isLoading">
+            <q-spinner size="50px" color="primary" />
+        </q-inner-loading>
+
     </q-card>
 </template>
 
 <script>
-import {register} from '../../services/userService'
+import {mapState} from 'vuex'
+
 export default {
     data(){
         return{
@@ -46,28 +53,28 @@ export default {
     },
     methods:{
         isValidate(){
-            if(this.nickname > 0 && this.account.length > 0 && this.password.length > 0 && this.accept){
+            if(this.nickname.length > 0 && this.account.length > 0 && this.password.length > 0 && this.accept){
                 this.disable = false;
             }
             else this.disable = true;
         },
         async handleReg(){
-            var resp = await register({
+            var payload = {
                 account : this.account,
-                password : this.password,
                 nickname : this.nickname,
-            });
-            // 注册失败
-            if(resp.status){
-                console.log("reg fail", resp);
-                // TODO 加入到store里面
+                password : this.password
             }
-            else{
-                console.log("reg success", resp);
-                // TODO 加入到store里面
-            }
-        }
-    }
+            this.$store.dispatch("userInfo/regUser",payload).then(() =>{
+                if(this.userInfo && this.isLoading){
+                    this.$router.push({
+                        name:"newsPage"
+                    })
+                }
+            })
+        },
+    },
+
+    computed: mapState("userInfo", ["isLoading", "userInfo"]),
 }
 </script>
 

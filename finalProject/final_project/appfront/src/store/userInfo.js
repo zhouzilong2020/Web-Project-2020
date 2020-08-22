@@ -17,18 +17,42 @@ export default{
     actions: {
         async loginUser(context, payload){
             context.commit("setIsLoading", true);
-            login(payload);
+
+            var resp = await login(payload);
+            if(resp.status == 0){// 登录成功
+                context.commit("setUserInfo", resp.data.userInfo)
+                
+            }
+            else{// 失败
+            }
+
             setTimeout(() => {
                 context.commit("setIsLoading", false);
             }, 2000);
         },
+
         async regUser(context, payload){
             context.commit("setIsLoading", true);     
-            var resp = register(payload);
-            if(resp.status == 201){
-                context.commit("setUserInfo", resp.data)
+            var resp = await register(payload);
+            console.log(resp)
+            if(resp.status == 0){ // 注册成功
+                context.commit("setUserInfo", resp.data.userInfo)
             }
-            context.commit("setIsLoading", false);
-        }
+            else{
+                //注册失败
+            }
+            setTimeout(() => {
+                context.commit("setIsLoading", false);
+            }, 2000);
+        },
+
+        async logoutUser(context){
+            // context.commit("setIsLoading", true);
+            context.commit("setUserInfo", null);     
+            setTimeout(() => {
+                // context.commit("setIsLoading", false);
+            }, 2000);
+        },
+
     },
 }

@@ -7,7 +7,7 @@ export async function login(loginInfo){
             params:loginInfo
         }
     )
-    console.log(resp)
+    // console.log(resp)
     return resp.data;
 }
 
@@ -18,6 +18,6 @@ export async function register(regInfo){
             params: regInfo,
         }
     );
-    console.log(resp)
+    // console.log(resp)
     return resp.data;
 }

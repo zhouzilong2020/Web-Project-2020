@@ -36,8 +36,11 @@ class UserViewSet(viewsets.ModelViewSet):
                 "status":0,
                 "meg" : "success",
                 "data" : {
-                        "nickname" : user.nickname
+                    "userInfo":{
+                        "nickname" : user.nickname,
+                        "account" : account,
                     }
+                }
             })
         else:
             return JsonResponse({
@@ -51,9 +54,10 @@ class UserViewSet(viewsets.ModelViewSet):
         account = request.data["params"]["account"]
         nickname = request.data["params"]["nickname"]
         password = request.data["params"]["password"]
-        user = User.objects.filter(
-                                    account = account,
-                                ).first()
+        
+        user = User.objects.filter(account = account).first()
+
+        print(user == None)
         try:
             # 系统总没有该用户，则注册成功
             if(user == None):
@@ -62,14 +66,16 @@ class UserViewSet(viewsets.ModelViewSet):
                     nickname = nickname,
                     password = password
                 )
-                User.save()
                 return JsonResponse({
-                    "status":0,
-                    "meg" : "success"
+                    "status" : 0,
+                    "meg" : "success",
+                    "data" : {
+                        "userInfo" : {
+                            "account" : account,
+                            "nickname" : nickname,
+                        }
+                    }
                 })
-                
-            
-            
             else:
                 return JsonResponse({
                     "status":1,
