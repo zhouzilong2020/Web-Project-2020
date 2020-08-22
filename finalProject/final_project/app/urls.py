@@ -16,5 +16,5 @@ urlpatterns = [
     # path("", views.index, name="index"),
     # # name一个占位符
     # path("<str:name>", views.greet, name="greet"),
-    path('', include(router.urls))
+    path('', include(router.urls)),
 ]

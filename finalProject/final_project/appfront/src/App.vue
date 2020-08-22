@@ -6,7 +6,6 @@
 
 <script>
 import layout from './components/layout'
-
 export default {
 
   components: {
@@ -15,9 +14,8 @@ export default {
 
   data () {
     return {
-      
     }
-  }
+  },
 }
 </script>
 

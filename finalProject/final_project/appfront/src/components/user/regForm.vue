@@ -13,6 +13,11 @@
                     <q-icon name="person" />
                 </template>
             </q-input>
+            <q-input outlined v-model="nickname" label="昵称" :rules="[val => !!val || '请输入昵称']" @input="isValidate">
+                <template v-slot:prepend>
+                    <q-icon name="person" />
+                </template>
+            </q-input>
             <q-input outlined v-model="password" type="password" label="密码" :rules="[val => !!val || '请输入用户名']" @input="isValidate">
                 <template v-slot:prepend>
                     <q-icon name="apps" />
@@ -33,6 +38,7 @@ export default {
     data(){
         return{
             account:'',
+            nickname:'',
             password:'',
             accept:false,
             disable:true,
@@ -40,7 +46,7 @@ export default {
     },
     methods:{
         isValidate(){
-            if(this.account.length > 0 && this.password.length > 0 && this.accept){
+            if(this.nickname > 0 && this.account.length > 0 && this.password.length > 0 && this.accept){
                 this.disable = false;
             }
             else this.disable = true;
@@ -49,11 +55,15 @@ export default {
             var resp = await register({
                 account : this.account,
                 password : this.password,
-                nickname : "1",
+                nickname : this.nickname,
             });
-            // 建立成功
-            if(resp == 201){
-                console.log("reg success!");
+            // 注册失败
+            if(resp.status){
+                console.log("reg fail", resp);
+                // TODO 加入到store里面
+            }
+            else{
+                console.log("reg success", resp);
                 // TODO 加入到store里面
             }
         }
@@ -66,10 +76,9 @@ export default {
 .head-subtitle{padding-top:10px}
 
 .reg-form{width:320px; height: 480px}
-.reg-form .reg-form-input{width:300px; margin: 0 auto;}
+.reg-form .reg-form-input{width:300px; margin: 0 auto; position: relative; top:-25px}
 
-.reg-form .refund {padding-left:30px; font-size:1.1em;}
-.reg-form .reg-form-bottom {position: relative; top:20px}
+.reg-form .reg-form-bottom {position: relative; top:-35px}
 
 .reg-form .reg-form-bottom .accept-term{margin:0 auto; padding-bottom: 20px;}
 
