@@ -3,10 +3,14 @@ export default{
     routes:[
         {
             path:'/',
-            name:'index',
+            name:'homepage',
+            component: ()=> import("@/components/homepage/infoCard")
+        },{
+            path:'/dialog',
+            name:'dialog',
             component: ()=> import("@/components/dialog"),           
         },{
-            path:'/',
+            path:'/index',
             name:'index',
             component: ()=> import("@/components/HelloWorld"),           
         },{
