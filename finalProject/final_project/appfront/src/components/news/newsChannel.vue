@@ -31,6 +31,7 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
 export default {
     data(){
         return{
@@ -40,9 +41,6 @@ export default {
         }
     },
     props:{
-        channels:{
-            type: Array
-        },
         initNum:{
             type:Number,
             default:12
@@ -51,10 +49,11 @@ export default {
     computed:{
         showChannels(){
             if(this.isCollapsed){
-                return this.channels.slice(0, this.initNum);
+                return this.newsChannels.slice(0, this.initNum);
             }
-            else return this.channels
-        }
+            else return this.newsChannels
+        },
+        ...mapState('newsChannel', ['newsChannels'])
     },
     methods:{
         handleMoreNews(){

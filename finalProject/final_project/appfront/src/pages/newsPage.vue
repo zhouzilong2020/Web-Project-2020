@@ -29,7 +29,8 @@
 import newsCard from "../components/news/newsCard"
 import newsChannel from "../components/news/newsChannel"
 
-import {getNewsChannels, getNews} from '../services/newsServices'
+import {getNews} from '../services/newsServices'
+import {mapState} from 'vuex'
 
 export default {
     components:{
@@ -44,32 +45,30 @@ export default {
             currentPage:1,
         }
     },
+    computed:{
+       
+       ...mapState('newsChannel', ['newsChannels', 'curChannel'])
+    
+    },
+
     methods:{
-        async channelChange(channelId){
-            this.selectedChannel = channelId;
-            var respNews = await getNews(channelId)
-            console.log(respNews)
-            this.newsList = respNews
-        },
         async handlePager(){
-            var respNews = await getNews(this.selectedChannel, this.currentPage)
+            var respNews = await getNews(this.curChannel, this.currentPage)
             this.newsList = respNews
             this.document.body.scrollTop=0
         },
-
     },
     /**
      * 调用api服务，获取数据
      */
     async created(){
         // 返回的频道数据
-        var respChannel = await getNewsChannels();
-        this.channels = respChannel;
-        this.selectedChannel = respChannel[0].channelId
+        this.$store.getNewsChannels()
+
     },
     async mounted(){
         // 返回的新闻数据
-        var respNews = await getNews(this.selectedChannel)
+        var respNews = await getNews(this.curChannel)
         this.newsList = respNews
         console.log(respNews)
     }

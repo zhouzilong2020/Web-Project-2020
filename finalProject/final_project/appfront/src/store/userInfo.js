@@ -19,11 +19,12 @@ export default{
             context.commit("setIsLoading", true);
 
             var resp = await login(payload);
+            console.log("as1231231dasd")
             if(resp.status == 0){// 登录成功
                 context.commit("setUserInfo", resp.data.userInfo)
-                
             }
             else{// 失败
+                console.log("fail")
             }
 
             setTimeout(() => {
@@ -40,6 +41,7 @@ export default{
             }
             else{
                 //注册失败
+                console.log("fail")
             }
             setTimeout(() => {
                 context.commit("setIsLoading", false);

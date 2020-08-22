@@ -14,8 +14,6 @@ export async function getNewsChannels(){
     return resp.data.showapi_res_body.channelList
 }
 
-getNewsChannels();
-
 /**
  * 分页获取新闻数据
  * @param {*} channelId 频道id

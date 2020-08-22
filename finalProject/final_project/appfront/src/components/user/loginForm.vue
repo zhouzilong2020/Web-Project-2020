@@ -62,6 +62,8 @@ export default {
                         name:"newsPage"
                     })
                 }
+            }).catch((err) =>{
+                console.log(err)
             })
         },
     },

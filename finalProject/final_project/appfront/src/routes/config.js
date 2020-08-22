@@ -2,7 +2,7 @@ export default{
     mode : 'history',
     routes:[
         {
-            path:'/index',
+            path:'/',
             name:'index',
             component: ()=> import("@/components/HelloWorld"),           
         },{
