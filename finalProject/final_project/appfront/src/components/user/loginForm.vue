@@ -29,18 +29,28 @@
         <q-inner-loading :showing="isLoading">
             <q-spinner size="50px" color="primary" />
         </q-inner-loading>
+
+        <!-- 警告提示 -->
+        <!-- <dialog :showDialog="showDialog"  :mes="a" > </dialog> -->
     </q-card>
+    
 </template>
 
 <script>
 import {mapState} from "vuex"
+// import dialog from "../dialog"
+
 export default {
+    components:{
+        // dialog
+    },
     data(){
         return{
             account:'',
             password:'',
             accept:false,
             disable:true,
+            showDialog:false,
         }
     },
     methods:{
@@ -57,13 +67,14 @@ export default {
             }
             this.$store.dispatch("userInfo/loginUser",payload).then(()=>{
                 if(this.userInfo && this.isLoading){
-                    console.log("ASDasdasdasdasdasdas")
                     this.$router.push({
                         name:"newsPage"
+                        
                     })
                 }
             }).catch((err) =>{
                 console.log(err)
+                this.showDialog = true
             })
         },
     },

@@ -11,6 +11,7 @@
         >
             <!-- 是用声明式导航 -->
             <q-route-tab 
+                v-for="channel in showChannels" 
                 :to="{
                     name:'newsPage',  
                     params:{
@@ -18,7 +19,6 @@
                     }
                 }"
                 transition-show="jump-down" 
-                v-for="channel in showChannels" 
                 :key="channel.channelId"  
                 :label="channel.name" 
                 :name="channel.channelId">
@@ -47,13 +47,13 @@ export default {
         }
     },
     computed:{
+        ...mapState('newsChannel', ['newsChannels','curChannel']),
         showChannels(){
             if(this.isCollapsed){
                 return this.newsChannels.slice(0, this.initNum);
             }
             else return this.newsChannels
         },
-        ...mapState('newsChannel', ['newsChannels'])
     },
     methods:{
         handleMoreNews(){
@@ -64,8 +64,7 @@ export default {
             }, 2000);
         },
         handleChange(){
-            console.log("channel change")
-            this.$emit('channelChange', this.selectedChannel)
+            this.$store.commit('newsChannel/setCurChannel', this.selectedChannel)
         }
     },
     watch:{
@@ -75,15 +74,14 @@ export default {
      * 生命周期函数，创建组件时获取数据
      */
     async created(){
+        this.selectedChannel = this.curChannel
     },
     /**
      * 生命周期函数，挂载组件时获取数据
      */
-    mounted(){
-        // this.selectedChannel = this.channels[0].channelId
-        // this.handleChange()
-    }
+    async mounted(){
 
+    }
 }
 </script>
 

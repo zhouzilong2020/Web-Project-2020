@@ -17,16 +17,13 @@ export default{
     actions: {
         async loginUser(context, payload){
             context.commit("setIsLoading", true);
-
             var resp = await login(payload);
-            console.log("as1231231dasd")
-            if(resp.status == 0){// 登录成功
-                context.commit("setUserInfo", resp.data.userInfo)
+            if(resp && resp.data.status == 0){// 登录成功
+                context.commit("setUserInfo", resp.data.data.userInfo)
             }
             else{// 失败
-                console.log("fail")
+                console.log("fail")   
             }
-
             setTimeout(() => {
                 context.commit("setIsLoading", false);
             }, 2000);
@@ -36,8 +33,8 @@ export default{
             context.commit("setIsLoading", true);     
             var resp = await register(payload);
             console.log(resp)
-            if(resp.status == 0){ // 注册成功
-                context.commit("setUserInfo", resp.data.userInfo)
+            if(resp && resp.status == 0){ // 注册成功
+                context.commit("setUserInfo", resp.data.data.userInfo)
             }
             else{
                 //注册失败

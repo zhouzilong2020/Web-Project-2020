@@ -2,18 +2,18 @@
     <div>
         <div class="news-page row ">
             <div class="news-channels">
-                <news-channel :channels="channels" @channelChange="channelChange"/>
+                <news-channel/>
             </div>
-            <div class=" news-cards flex justify-around ietms-center bg-grey-1" >
+            <div class="news-cards flex justify-around ietms-center bg-grey-1" >
                 <news-card class="news-card" v-for="news in newsList.contentlist" :key="news.id" :news="news" />
             </div>       
         </div>
         <div class="q-pa-lg flex flex-center pager">
                 <q-pagination
-                v-model="currentPage"
+                v-model="curPage"
                 color="primary"
                 :max="newsList.allPages"
-                :max-pages="6"
+                :max-pages="8"
                 :boundary-numbers="true"
                 @click="handlePager()"
                 >
@@ -39,38 +39,42 @@ export default {
     },
     data(){
         return {
-            channels:[],
-            newsList:null,
-            selectedChannel:"",
-            currentPage:1,
+            newsList:{},
+            curPage:1,
         }
     },
-    computed:{
-       
-       ...mapState('newsChannel', ['newsChannels', 'curChannel'])
-    
+    computed:{ 
+       ...mapState('newsChannel', ['curChannel']),
     },
-
+    watch:{
+        async curChannel(){//检测当前页面是否变化，如果变化，则调整相应内容
+            // 新频道从第一页开始
+            this.curPage = 1
+            var respNews = await getNews(this.curChannel, 1)
+            this.newsList = respNews
+        }
+    },
     methods:{
         async handlePager(){
-            var respNews = await getNews(this.curChannel, this.currentPage)
+            var respNews = await getNews(this.curChannel, this.curPage)
             this.newsList = respNews
-            this.document.body.scrollTop=0
         },
     },
     /**
      * 调用api服务，获取数据
      */
     async created(){
-        // 返回的频道数据
-        this.$store.getNewsChannels()
-
+        // 获取新闻频道，存放在store中！
+        this.$store.dispatch("newsChannel/getNewsChannels").then(() => {
+            // 返回的新闻数据
+            getNews(this.curChannel, this.curPage).then((resp) =>{
+                this.newsList = resp
+                console.log("news",resp)
+            })
+        })
     },
     async mounted(){
-        // 返回的新闻数据
-        var respNews = await getNews(this.curChannel)
-        this.newsList = respNews
-        console.log(respNews)
+        
     }
 }
 </script>

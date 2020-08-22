@@ -4,10 +4,9 @@ import {getNewsChannels} from "../services/newsServices"
 export default{
     namespaced : true,
     state : {
-        newsChannels: null,
+        newsChannels: [],
         isLoading : false,
-        curChannel:null
-
+        curChannel: 0,
     },
     mutations:{
         setNewsChannels(state, payload){

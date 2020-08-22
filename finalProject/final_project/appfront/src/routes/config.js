@@ -4,6 +4,10 @@ export default{
         {
             path:'/',
             name:'index',
+            component: ()=> import("@/components/dialog"),           
+        },{
+            path:'/',
+            name:'index',
             component: ()=> import("@/components/HelloWorld"),           
         },{
             path:'/login',
@@ -21,7 +25,11 @@ export default{
             path:'/newsChannel/:channelId',
             name:'newsPage',
             component: ()=> import("@/pages/newsPage")
-        },
+        },{
+            path:'*',
+            name:'404',
+            component: ()=> import("@/pages/NotFound")
+        }
     ]
 }
 
