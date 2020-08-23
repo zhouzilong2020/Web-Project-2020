@@ -29,8 +29,8 @@
                 transition-next="jump-up"
                 >
                 <q-tab-panel name="infomation">
-                    <div class="text-h4 q-mb-md">个人信息</div>
-
+                    <div class="text-h4 q-mb-md">修改个人信息</div>
+                    <user-info  class="edit-form"/>
                 </q-tab-panel>
 
                 <q-tab-panel name="history">
@@ -58,10 +58,12 @@
 <script>
 import headCard from './headCard'
 import historyNews from './historyNews'
+import userInfo from './userInfo'
 export default {
     components:{
         headCard,
-        historyNews
+        historyNews,
+        userInfo
     },
     data(){
         return {
@@ -94,7 +96,10 @@ export default {
     width:100%;
     padding:10px
 }
-
+.edit-form{
+    padding:10px;
+    margin-left:20px
+}
 .penals{
     width:200px;
     height:800px;
