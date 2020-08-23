@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from app.models import User
+from app.models import User, Favorite, History
 
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -15,3 +15,13 @@ class UserSerializer(serializers.ModelSerializer):
 
 # new_item = serializers(data = data)
 # new_item.initial_data()
+
+class HistorySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = History
+        fields = '__all__'
+
+class FavoriteSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Favorite
+        fields = '__all__'

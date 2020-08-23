@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
+import json
 # Create your views here.
 
 # django as back end
@@ -8,8 +9,11 @@ from rest_framework.response import Response
 from rest_framework.decorators import action
 
 
-from app.models import User
-from app.serializer import UserSerializer
+from app.models import User, Favorite, History
+from app.serializer import UserSerializer, FavoriteSerializer, HistorySerializer
+
+# 获取当前时间
+import datetime
 
 
 # 将返回所有的用户信息
@@ -28,13 +32,17 @@ class UserViewSet(viewsets.ModelViewSet):
         account = request.data["params"]["account"]
         password = request.data["params"]["password"]
         user = User.objects.filter(
-                                    account = account, 
-                                    password = password
-                                ).first()
+            account = account, 
+            password = password
+        ).first()
+
         if(user):
+            user.lastLogDate = datetime.datetime.now()
+            user.save()
+            print(datetime.datetime.now())
             return JsonResponse({
                 "status":0,
-                "meg" : "success",
+                "mes" : "success",
                 "data" : {
                     "userInfo":{
                         "nickname" : user.nickname,
@@ -45,7 +53,7 @@ class UserViewSet(viewsets.ModelViewSet):
         else:
             return JsonResponse({
                 "status":1,
-                "meg" : "fail"
+                "mes" : "fail"
             })
 
     # 接口为 http://127.0.0.1:8000/api/user/register/
@@ -54,9 +62,7 @@ class UserViewSet(viewsets.ModelViewSet):
         account = request.data["params"]["account"]
         nickname = request.data["params"]["nickname"]
         password = request.data["params"]["password"]
-        
         user = User.objects.filter(account = account).first()
-
         print(user == None)
         try:
             # 系统总没有该用户，则注册成功
@@ -68,7 +74,7 @@ class UserViewSet(viewsets.ModelViewSet):
                 )
                 return JsonResponse({
                     "status" : 0,
-                    "meg" : "success",
+                    "mes" : "success",
                     "data" : {
                         "userInfo" : {
                             "account" : account,
@@ -79,55 +85,137 @@ class UserViewSet(viewsets.ModelViewSet):
             else:
                 return JsonResponse({
                     "status":1,
-                    "meg" : "user account exists"
+                    "mes" : "user account exists"
                 })
         except:
             # 注册失败
             return JsonResponse({
-                    "status":1,
-                    "meg" : "fail"
-                })
+                "status":1,
+                "mes" : "fail"
+            })
     
-     # 接口为 http://127.0.0.1:8000/api/user/changeNickname/
-    @action(methods = ['post'], detail = False)
-    def login(self, request, pk = None):
-        account = request.data["params"]["account"]
-        user = User.objects.filter(
-                                    account = account,
-                                ).first()
-        if(user):
-            
 
+# 用户收藏视图集
+class FavoriteViewSet(viewsets.ModelViewSet):
+    queryset = Favorite.objects.all()
+    serializer_class = FavoriteSerializer
+
+    # 用户收藏了一条新闻
+    def create(self, request, *args, **kwargs):
+        account = request.data["params"]["account"]
+        newsID = request.data["params"]["newsID"]
+        try:
+            newRecord = Favorite(
+                account= account,
+                newsID = newsID,
+            )
+            newRecord.save()
             return JsonResponse({
                 "status":0,
-                "meg" : "success",
+                "mes" : "success",
                 "data" : {
-                    "userInfo":{
-                        "nickname" : user.nickname,
-                        "account" : account,
-                    }
+                    "id": newRecord.id
                 }
             })
-        else:
+        except:
             return JsonResponse({
                 "status":1,
-                "meg" : "fail"
+                "mes" : "fail",
             })
 
+    # 用户删除了一条新闻
+    def delete(self, request, *args, **kwargs):
+        id = request.data["params"]["id"]
+        try:
+            Favorite.objects.filter(id = id).delete()
+            return JsonResponse({
+                "status":0,
+                "mes" : "success",
+            })
+        except:
+            return JsonResponse({
+                "status":1,
+                "mes" : "fail",
+            })
 
-    
-    # 传入id
-    def retrieve(self, request, pk=None):
-        pass
-        
+    # 传入用户account，返回所有的收藏新闻的数据
+    def list(self, request, pk=None):
+        try:
+            # account = request.data["params"]["account"]
+            account = 11
+            favorite = Favorite.objects.filter(account = account).all()
+            favorite_s = FavoriteSerializer(favorite, many=True)
+            return JsonResponse({
+                "status":0,
+                "mes" : "success",
+                "data" : favorite_s.data
+            })
+        except:
+            return JsonResponse({
+                "status":1,
+                "mes" : "fail",
+            })
+       
+
+
+# 用户浏览历史记录视图集
+class HistoryViewSet(viewsets.ModelViewSet):
+    queryset = History.objects.all()
+    serializer_class = HistorySerializer
+
+        # 用户浏览了一条新闻
     def create(self, request, *args, **kwargs):
-       pass
+        account = request.data["params"]["account"]
+        newsID = request.data["params"]["newsID"]
+        try:
+            newRecord = History(
+                account= account,
+                newsID = newsID,
+            )
+            newRecord.save()
+            return JsonResponse({
+                "status":0,
+                "mes" : "success",
+                "data" : {
+                    "id": newRecord.id
+                }
+            })
+        except:
+            return JsonResponse({
+                    "status":1,
+                    "mes" : "fail",
+                })
 
-    def update(self, request, *args, **kwargs):
-        pass
-
-    def destroy(self, request, *args, **kwargs):
-        pass
-
-    # def list(self, request, *args, **kwargs):
-    #     pass
+    # 用户删除了一条历史记录
+    def delete(self, request, *args, **kwargs):
+        ids = request.data["params"]["id"]
+        try:
+            for id in ids:
+                History.objects.get(id = id).delete()
+            return JsonResponse({
+                "status":0,
+                "mes" : "success",
+            })
+        except:
+            return JsonResponse({
+                    "status":1,
+                    "mes" : "fail",
+                })
+       
+    # 传入用户account，返回所有的历史浏览新闻数据
+    def list(self, request, pk=None):
+        try:
+            # account = request.data["params"]["account"]
+            account = 11
+            history = History.objects.filter(account = account).all()
+            history_s = HistorySerializer(history, many=True)
+            return JsonResponse({
+                "status":0,
+                "mes" : "success",
+                "data" : history_s.data
+            })
+        except:
+            return JsonResponse({
+                    "status":1,
+                    "mes" : "fail",
+                })

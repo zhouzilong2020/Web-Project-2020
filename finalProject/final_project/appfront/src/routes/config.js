@@ -2,6 +2,10 @@ export default{
     mode : 'history',
     routes:[
         {
+            path:'/',
+            name:'',
+            component: ()=> import("@/components/footer")
+        },{
             path:'/homepage/:account',
             name:'homepage',
             component: ()=> import("@/pages/homepage")

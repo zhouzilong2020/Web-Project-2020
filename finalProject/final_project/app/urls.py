@@ -9,6 +9,8 @@ from rest_framework.routers import DefaultRouter
 # 注册url
 router = DefaultRouter()
 router.register('user', views.UserViewSet)
+router.register('favorite', views.FavoriteViewSet)
+router.register('history', views.HistoryViewSet)
 
 # 应用独立的url配置
 urlpatterns = [
