@@ -87,6 +87,35 @@ class UserViewSet(viewsets.ModelViewSet):
                     "status":1,
                     "meg" : "fail"
                 })
+    
+     # 接口为 http://127.0.0.1:8000/api/user/changeNickname/
+    @action(methods = ['post'], detail = False)
+    def login(self, request, pk = None):
+        account = request.data["params"]["account"]
+        user = User.objects.filter(
+                                    account = account,
+                                ).first()
+        if(user):
+            
+
+            return JsonResponse({
+                "status":0,
+                "meg" : "success",
+                "data" : {
+                    "userInfo":{
+                        "nickname" : user.nickname,
+                        "account" : account,
+                    }
+                }
+            })
+        else:
+            return JsonResponse({
+                "status":1,
+                "meg" : "fail"
+            })
+
+
+    
     # 传入id
     def retrieve(self, request, pk=None):
         pass

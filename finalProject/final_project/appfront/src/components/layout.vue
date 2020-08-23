@@ -17,8 +17,8 @@
             欢迎你！{{userInfo.nickname}}
           </q-toolbar-title>
           <q-btn-group flat class="header-options">
-            <q-btn class="header-option" outline color="wight" label="个人主页" />
-            <q-btn class="header-option" outline color="wight" label="我的收藏"  />
+            <q-btn class="header-option" outline color="wight" label="个人主页"/>
+            <q-btn class="header-option" outline color="wight" label="热点新闻"  />
             <q-btn class="header-option" outline color="wight" label="退出登录" @click="handleLogout()" />
           </q-btn-group>
         </template>

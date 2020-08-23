@@ -44,7 +44,6 @@ export default{
                 context.commit("setIsLoading", false);
             }, 2000);
         },
-
         async logoutUser(context){
             // context.commit("setIsLoading", true);
             context.commit("setUserInfo", null);     
@@ -52,6 +51,26 @@ export default{
                 // context.commit("setIsLoading", false);
             }, 2000);
         },
+
+        
+        async setPassword(context, payload){
+            console.log(payload)
+            context.commit("setIsLoading", true);
+            context.commit("setUserInfo", null);     
+            setTimeout(() => {
+                context.commit("setIsLoading", false);
+            }, 2000);
+        },
+
+        async setNickname(context, payload){
+            console.log(payload)
+            context.commit("setIsLoading", true);
+            context.commit("setUserInfo", null);     
+            setTimeout(() => {
+                context.commit("setIsLoading", false);
+            }, 2000);
+        },
+
 
     },
 }

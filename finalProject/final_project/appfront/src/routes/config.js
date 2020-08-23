@@ -2,9 +2,9 @@ export default{
     mode : 'history',
     routes:[
         {
-            path:'/',
+            path:'/homepage/:account',
             name:'homepage',
-            component: ()=> import("@/components/homepage/infoCard")
+            component: ()=> import("@/pages/homepage")
         },{
             path:'/dialog',
             name:'dialog',

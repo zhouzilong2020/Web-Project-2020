@@ -24,3 +24,39 @@ export async function register(regInfo){
     // console.log(resp)
     return resp;
 }
+
+
+export async function changeNickname(nickname){
+    setTimeout(() => {
+        return {data:{
+            status:1,
+            mes:"timeout"
+        }}
+    }, 2000);
+    var resp = await axios.post(
+        'http://localhost:8000/api/user/changeNickname',
+        {
+            params: nickname,
+        }
+    );
+    // console.log(resp)
+    return resp;
+}
+
+
+export async function changePassword(password){
+    setTimeout(() => {
+        return {data:{
+            status:1,
+            mes:"timeout"
+        }}
+    }, 2000);
+    var resp = await axios.post(
+        'http://localhost:8000/api/user/changePassword/',
+        {
+            params: password,
+        }
+    );
+    // console.log(resp)
+    return resp;
+}

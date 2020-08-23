@@ -67,8 +67,12 @@ export default {
             }
             this.$store.dispatch("userInfo/loginUser",payload).then(()=>{
                 if(this.userInfo && this.isLoading){
+                    console.log("asdasdas")
                     this.$router.push({
-                        name:"newsPage"
+                        name:"homepage",
+                        params:{
+                            account:this.userInfo.account,
+                        }
                         
                     })
                 }
