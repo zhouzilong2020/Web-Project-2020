@@ -1,22 +1,26 @@
 <template>
     <div class="absolute-center">
+
        <template>
             <div>
                 <q-splitter
                 v-model="splitterModel"
-                style="height: 350px"
+                style="height: 500px"
                 >
 
                     <template v-slot:before>
-                        <q-tabs
-                        v-model="tab"
-                        vertical
-                        class="text-teal"
-                        >
-                                <q-tab name="mails" icon="mail" label="个人信息" />
+                        <div class="left">
+                            <head-card />
+                            <q-tabs
+                            v-model="tab"
+                            vertical
+                            class="text-teal"
+                            >
+                                <q-tab name="mails" icon="mail" label="" />
                                 <q-tab name="alarms" icon="alarm" label="Alarms" />
                                 <q-tab name="movies" icon="movie" label="Movies" />
-                                </q-tabs>
+                            </q-tabs>
+                        </div>
                     </template>
 
                     <template v-slot:after>
@@ -53,11 +57,15 @@
 </template>
 
 <script>
+import headCard from './headCard'
 export default {
+    components:{
+        headCard
+    },
     data(){
         return {
-             tab: 'mails',
-            splitterModel: 20
+            tab: 'mails',
+            splitterModel: 50
         }
     },
     props:{
@@ -85,5 +93,9 @@ export default {
 }
 .info{
     width: 500px;
+}
+
+.left{
+    width:200px
 }
 </style>
