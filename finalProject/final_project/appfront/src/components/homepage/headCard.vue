@@ -5,10 +5,10 @@
             <q-avatar class="avatar" color="primary" text-color="white">J</q-avatar>
             <div class="user-info column">
                 <q-label class="nickname text-h5"> {{nickname }} </q-label>
-                <q-label class="text-overline"> {{ account }} </q-label>
+                <q-label class="account text-overline"> {{ account }} </q-label>
             </div>
         </div>
-        <div class="column">
+        <div class="column info">
             <q-badge flat color="primary" >上次登录时间:  {{lastLoginTime}}</q-badge>
             <q-badge outline color="primary">累计浏览次数:  {{totalReadCount}}</q-badge>
         </div>
@@ -45,6 +45,7 @@ export default {
     padding:10px;
 }
 .head-info{
+    padding-bottom:15px;
     .avatar{
         padding-top:10px;
         margin-right: 10px;

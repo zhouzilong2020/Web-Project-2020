@@ -1,71 +1,80 @@
 <template>
-    <div class="absolute-center">
-
-       <template>
-            <div>
-                <q-splitter
-                v-model="splitterModel"
-                style="height: 500px"
+    <div >
+        <div class="info-card row no-wrap">
+            <div class="penals col-4">
+                <head-card />
+                <q-tabs
+                v-model="tab"
+                vertical
+                class="text-teal"
                 >
-
-                    <template v-slot:before>
-                        <div class="left">
-                            <head-card />
-                            <q-tabs
-                            v-model="tab"
-                            vertical
-                            class="text-teal"
-                            >
-                                <q-tab name="mails" icon="mail" label="" />
-                                <q-tab name="alarms" icon="alarm" label="Alarms" />
-                                <q-tab name="movies" icon="movie" label="Movies" />
-                            </q-tabs>
-                        </div>
-                    </template>
-
-                    <template v-slot:after>
-                        <q-tab-panels
-                        v-model="tab"
-                        animated
-                        transition-prev="jump-up"
-                        transition-next="jump-up"
-                        >
-                        <q-tab-panel name="mails">
-                            <div class="text-h4 q-mb-md">Mails</div>
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis praesentium cumque magnam odio iure quidem, quod illum numquam possimus obcaecati commodi minima assumenda consectetur culpa fuga nulla ullam. In, libero.</p>
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis praesentium cumque magnam odio iure quidem, quod illum numquam possimus obcaecati commodi minima assumenda consectetur culpa fuga nulla ullam. In, libero.</p>
-                        </q-tab-panel>
-
-                        <q-tab-panel name="alarms">
-                            <div class="text-h4 q-mb-md">Alarms</div>
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis praesentium cumque magnam odio iure quidem, quod illum numquam possimus obcaecati commodi minima assumenda consectetur culpa fuga nulla ullam. In, libero.</p>
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis praesentium cumque magnam odio iure quidem, quod illum numquam possimus obcaecati commodi minima assumenda consectetur culpa fuga nulla ullam. In, libero.</p>
-                        </q-tab-panel>
-
-                        <q-tab-panel name="movies">
-                            <div class="text-h4 q-mb-md">Movies</div>
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis praesentium cumque magnam odio iure quidem, quod illum numquam possimus obcaecati commodi minima assumenda consectetur culpa fuga nulla ullam. In, libero.</p>
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis praesentium cumque magnam odio iure quidem, quod illum numquam possimus obcaecati commodi minima assumenda consectetur culpa fuga nulla ullam. In, libero.</p>
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis praesentium cumque magnam odio iure quidem, quod illum numquam possimus obcaecati commodi minima assumenda consectetur culpa fuga nulla ullam. In, libero.</p>
-                        </q-tab-panel>
-                        </q-tab-panels>
-                    </template>
-                </q-splitter>
+                    <q-tab name="infomation" icon="infomation" label="个人信息" />
+                    <q-tab name="history" icon="history" label="历史记录">
+                        <q-badge color="orange" floating>{{historyNum}}</q-badge>
+                    </q-tab>
+                    <q-tab name="bookmark" icon="bookmark" label="我的收藏">
+                        <q-badge color="orange" floating>{{favoriteNum}}</q-badge>
+                    </q-tab>
+                </q-tabs>
             </div>
-        </template>
+
+            <q-separator vertical  />
+    
+            <div class="info-display col-8">
+                <q-tab-panels
+                v-model="tab"
+                animated
+                vertical
+                transition-prev="jump-up"
+                transition-next="jump-up"
+                >
+                <q-tab-panel name="infomation">
+                    <div class="text-h4 q-mb-md">个人信息</div>
+
+                </q-tab-panel>
+
+                <q-tab-panel name="history">
+                    <div class="text-h4 q-mb-md">历史记录</div>
+                    <history-news />
+                    <history-news />
+                    <history-news />
+                   
+                </q-tab-panel>
+
+                <q-tab-panel name="bookmark">
+                    <div class="text-h4 q-mb-md">我的收藏</div>
+                    <history-news />
+                    <history-news />
+                    <history-news />
+                    <history-news />
+                   
+                </q-tab-panel>
+                </q-tab-panels>
+            </div>
+        </div>
     </div>
 </template>
 
 <script>
 import headCard from './headCard'
+import historyNews from './historyNews'
 export default {
     components:{
-        headCard
+        headCard,
+        historyNews
     },
     data(){
         return {
-            tab: 'mails',
+            tab: 'infomation',
             splitterModel: 50
+        }
+    },
+    computed:{
+        historyNum(){
+            return 10;
+        },
+        favoriteNum(){
+            return 10;
         }
     },
     props:{
@@ -76,26 +85,24 @@ export default {
             default:"account"
         }
     }
-
 }
 </script>
 
 <style scoped>
-.infoCard{
-  width: 100%;
-  
+
+.info-card{
+    width:100%;
+    padding:10px
 }
 
-.indicator{
-    padding:0;
-    margin:0 auto;
-    border:0;
-}
-.info{
-    width: 500px;
+.penals{
+    width:200px;
+    height:800px;
 }
 
-.left{
-    width:200px
+.info-display{
+    margin-left:40px;
+    height:800px;
+    /* border:1px black solid */
 }
 </style>
