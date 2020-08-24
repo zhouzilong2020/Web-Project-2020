@@ -9,7 +9,6 @@
             </div>       
         </div>
         <div class="q-pa-lg flex pager">
-            {{screenHeight}}
 
             <q-page-scroller position="bottom" :scroll-offset="screenHeight-1000" :offset="[18, 18]">
                 <q-pagination
