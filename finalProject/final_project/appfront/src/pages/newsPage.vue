@@ -9,7 +9,9 @@
             </div>       
         </div>
         <div class="q-pa-lg flex pager">
-            <q-page-scroller position="bottom" :scroll-offset="150" :offset="[18, 18]">
+            {{screenHeight}}
+
+            <q-page-scroller position="bottom" :scroll-offset="screenHeight-1000" :offset="[18, 18]">
                 <q-pagination
                 v-model="curPage"
                 color="primary"
@@ -20,6 +22,7 @@
                 >
                 </q-pagination>
             </q-page-scroller>
+
         </div>
         <q-page-scroller position="bottom-right" :scroll-offset="150" :offset="[18, 18]">
             <q-btn fab icon="keyboard_arrow_up" color="primary" />
@@ -46,7 +49,10 @@ export default {
         }
     },
     computed:{ 
-       ...mapState('newsChannel', ['curChannel']),
+        ...mapState('newsChannel', ['curChannel']),
+        screenHeight(){
+            return document.body.clientHeight
+        }
     },
     watch:{
         async curChannel(){//检测当前页面是否变化，如果变化，则调整相应内容

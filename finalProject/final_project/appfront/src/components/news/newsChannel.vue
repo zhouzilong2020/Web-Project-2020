@@ -7,8 +7,10 @@
             active-color="primary"
             active-bg-color="blue-1"
             indicator-color="blue-3"
-            @click="handleChange()"
+            
         >
+        {{selectedChannel.slice(-1)}}
+
             <!-- 是用声明式导航 -->
             <q-route-tab 
                 v-for="channel in showChannels" 
@@ -21,11 +23,15 @@
                 transition-show="jump-down" 
                 :key="channel.channelId"  
                 :label="channel.name" 
-                :name="channel.channelId">
+                :name="channel.channelId"
+                >
+                
                 <!-- <q-badge color="red" floating>99+</q-badge> -->
+                
             </q-route-tab>
+
         </q-tabs>
-        <q-btn unelevated color="primary" :loading="isLoading" class="more" v-if="isCollapsed" icon="more_horiz" @click="handleMoreNews" />
+        <q-btn unelevated color="primary" :loading="isLoading" class="more" v-if="isCollapsed" icon="more_horiz" @click="handleMoreNews()" />
     </div>
 
 </template>
@@ -63,11 +69,12 @@ export default {
                 this.isCollapsed = false
             }, 2000);
         },
-        handleChange(){
-            this.$store.commit('newsChannel/setCurChannel', this.selectedChannel)
-        }
     },
     watch:{
+        selectedChannel(){
+
+            this.$store.commit('newsChannel/setCurChannel', this.selectedChannel)
+        }
 
     },
     /**

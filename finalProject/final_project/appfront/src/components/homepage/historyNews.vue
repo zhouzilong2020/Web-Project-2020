@@ -1,7 +1,7 @@
 <template>
   <div>
     <q-card class="history-news" flat bordered>
-      <q-card-section horizontal>
+      <q-card-section horizontal class="justify-between">
 
         <q-card-section class="q-pt-xs">
           <div class="text-overline">{{news.pubDate}}</div>
@@ -13,12 +13,13 @@
         </q-card-section>
 
 
-        <q-card-section v-if="news.havePic" class="col-5 flex flex-center">
+        <q-card-section v-if="news.havePic" class="col-4 flex flex-center">
           <q-img
             class="rounded-borders"
-            :src="news.img"
+            :src="news.imageurls"
           />
         </q-card-section>
+
         <q-card-actions vertical class="justify-start">
             <q-btn size="12px" flat dense round icon="more_vert" @click="fullContent = true"/>
             <q-btn flat round  icon="delete" @click="handleDelete()"/>
@@ -70,7 +71,7 @@ export default {
         return this.news.content.slice(0, 100)
       }
       else{
-        return this.news.content.slice(0, 230)
+        return this.news.content.slice(0, 150)
       }
     }
   },

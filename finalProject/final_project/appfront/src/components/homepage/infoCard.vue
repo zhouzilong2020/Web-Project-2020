@@ -18,7 +18,7 @@
                 </q-tabs>
             </div>
 
-            <q-separator vertical  />
+            <q-separator vertical />
     
             <div class="info-display col-8">
                 <q-tab-panels
@@ -41,7 +41,9 @@
                 <q-tab-panel name="bookmark">
                     <div class="text-h4 q-mb-md">我的收藏</div>
                     <!-- 收藏的消息 -->
+
                     <history-news v-for="news in newsList" :key="news.id" :news="news"/>
+                    <div v-if="newsList.length==0" class="text-h5">暂时没有收藏的新闻哦</div>
                 </q-tab-panel>
                 </q-tab-panels>
             </div>
