@@ -8,7 +8,8 @@
                 <news-card class="news-card" v-for="news in newsList.contentlist" :key="news.id" :news="news" />
             </div>       
         </div>
-        <div class="q-pa-lg flex flex-center pager">
+        <div class="q-pa-lg flex pager">
+            <q-page-scroller position="bottom" :scroll-offset="150" :offset="[18, 18]">
                 <q-pagination
                 v-model="curPage"
                 color="primary"
@@ -18,6 +19,7 @@
                 @click="handlePager()"
                 >
                 </q-pagination>
+            </q-page-scroller>
         </div>
         <q-page-scroller position="bottom-right" :scroll-offset="150" :offset="[18, 18]">
             <q-btn fab icon="keyboard_arrow_up" color="primary" />
@@ -64,13 +66,10 @@ export default {
      * 调用api服务，获取数据
      */
     async created(){
-        // 获取新闻频道，存放在store中！
-        this.$store.dispatch("newsChannel/getNewsChannels").then(() => {
-            // 返回的新闻数据
-            getNews(this.curChannel, this.curPage).then((resp) =>{
-                this.newsList = resp
-                console.log("news",resp)
-            })
+        // 返回的新闻数据
+        getNews(this.curChannel, this.curPage).then((resp) =>{
+            this.newsList = resp
+            console.log("news",resp)
         })
     },
     async mounted(){
@@ -83,4 +82,5 @@ export default {
 .news-channels{float: left; max-width: 15%; margin-top:0px}
 .news-cards{max-width: 85%;  border: 3px solid white; margin:0 auto; border-radius: 20px;}
 .news-pagination{bottom: 0px; float: left;}
+.pager{margin-top: 40px;}
 </style>

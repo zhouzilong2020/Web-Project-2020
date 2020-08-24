@@ -14,7 +14,7 @@
                 <!-- 发布日期 -->
                 <div class="text-overline text-orange-9">{{news.pubDate}}</div>
                 <!-- 概要 -->
-                <div class="text-caption text-grey" v-if="!news.havePic" >{{content}}</div>
+                <div class="text-caption text-grey" >{{news.content.slice(0, contentNum) + "..."}}</div>
             </q-card-section>
 
             <!-- 加载特效 -->
@@ -85,20 +85,13 @@ export default {
         }
     },
     computed:{
-        /**
-         * 在头部显示的概要不超过100个字
-         */
-        content(){
-            var newsContent = ""
-            for(let i = 0, len = this.news.allList.length; i < len; i++){
-                if(typeof(this.news.allList[i])=="string"){
-                    if(newsContent.length + this.news.allList[i].length > 200){
-                        break
-                    }
-                    newsContent += this.news.allList[i]
-                }
+        contentNum(){
+            if(this.news.havePic){
+                return 50;
             }
-            return newsContent
+            else {
+                return 200;
+            }
         }
     },
     /**

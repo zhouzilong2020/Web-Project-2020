@@ -17,8 +17,8 @@
             欢迎你！{{userInfo.nickname}}
           </q-toolbar-title>
           <q-btn-group flat class="header-options">
-            <q-btn class="header-option" outline color="wight" label="个人主页"/>
-            <q-btn class="header-option" outline color="wight" label="热点新闻"  />
+            <q-btn class="header-option" outline color="wight" label="个人主页" @click="handleToHomepage()"/>
+            <q-btn class="header-option" outline color="wight" label="热点新闻" @click="handleToNewsPage()" />
             <q-btn class="header-option" outline color="wight" label="退出登录" @click="handleLogout()" />
           </q-btn-group>
         </template>
@@ -41,7 +41,10 @@ export default {
     return {
     }
   },
-  computed: mapState("userInfo", ["userInfo", "isLoading"]),
+  computed: {
+    ...mapState("userInfo", ["userInfo", "isLoading"]),
+    ...mapState('newsChannel', ["curChannel"])
+  },
   methods:{
     handleLogout(){
       this.$store.dispatch("userInfo/logoutUser").then(() =>{
@@ -49,7 +52,25 @@ export default {
             name:"index"
         })
       })
-
+    },
+    handleToNewsPage(){
+        // 获取新闻频道，存放在store中！
+        this.$store.dispatch("newsChannel/getNewsChannels").then(() => {
+          this.$router.push({
+            name:"newsPage",
+            params:{
+              channelId : this.curChannel
+            }
+          })
+        })
+    },
+    handleToHomepage(){
+      this.$router.push({
+            name:"homepage",
+            params:{
+              account : this.userInfo.account
+            }
+      })
     }
   }
 }

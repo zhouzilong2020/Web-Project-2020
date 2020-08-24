@@ -4,6 +4,8 @@ export default{
     namespaced: true,
     state: {
         userInfo: null,
+        history: null,
+        favorite: null,
         isLoading: false,
     },
     mutations: {
@@ -38,7 +40,7 @@ export default{
         async regUser(context, payload){
             context.commit("setIsLoading", true);     
             var resp = await register(payload);
-            
+
             if(resp.status == 200 && resp.data.status == 0){ // 注册成功
                 context.commit("setUserInfo", resp.data.data.userInfo)
             }
