@@ -51,11 +51,12 @@ export default {
     computed:{ 
         ...mapState('newsChannel', ['curChannel']),
         screenHeight(){
-            return document.body.clientHeight
+            return document.body.scrollHeight
         }
     },
     watch:{
         async curChannel(){//检测当前页面是否变化，如果变化，则调整相应内容
+
             // 新频道从第一页开始
             this.curPage = 1
             var respNews = await getNews(this.curChannel, 1)
