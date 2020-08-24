@@ -67,14 +67,15 @@ export default {
             }
             this.$store.dispatch("userInfo/loginUser",payload).then(()=>{
                 if(this.userInfo && this.isLoading){
-                    console.log("asdasdas")
-                    this.$router.push({
-                        name:"homepage",
-                        params:{
-                            account:this.userInfo.account,
-                        }
-                        
-                    })
+                    setTimeout(() => {
+                        this.$router.push({
+                            name:"homepage",
+                            params:{
+                                account:this.userInfo.account,
+                            }
+                        })
+                    }, 1000);
+                    
                 }
             }).catch((err) =>{
                 console.log(err)

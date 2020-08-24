@@ -1,5 +1,5 @@
 // 登录用户的仓库数据
-import {login, register} from "../services/userService"
+import {login, register, changeNickname, changePassword} from "../services/userService"
 export default{
     namespaced: true,
     state: {
@@ -13,12 +13,18 @@ export default{
         setIsLoading(state, payload){
             state.isLoading = payload;
         },
+        setNickname(state, payload){
+            // 只用当获取了用户权限后才能修改昵称
+            if(state.userInfo.nickname){
+                state.userInfo.nickname = payload;
+            }
+        },
     },
     actions: {
         async loginUser(context, payload){
             context.commit("setIsLoading", true);
             var resp = await login(payload);
-            if(resp && resp.data.status == 0){// 登录成功
+            if(resp.status == 200 && resp.data.status == 0){// 登录成功
                 context.commit("setUserInfo", resp.data.data.userInfo)
             }
             else{// 失败
@@ -32,8 +38,8 @@ export default{
         async regUser(context, payload){
             context.commit("setIsLoading", true);     
             var resp = await register(payload);
-            console.log(resp)
-            if(resp && resp.status == 0){ // 注册成功
+            
+            if(resp.status == 200 && resp.data.status == 0){ // 注册成功
                 context.commit("setUserInfo", resp.data.data.userInfo)
             }
             else{
@@ -52,25 +58,40 @@ export default{
             }, 2000);
         },
 
-        
         async setPassword(context, payload){
-            console.log(payload)
             context.commit("setIsLoading", true);
-            context.commit("setUserInfo", null);     
             setTimeout(() => {
                 context.commit("setIsLoading", false);
             }, 2000);
+
+            var resp = await changePassword({
+                account : context.state.userInfo.account,
+                password: payload
+            })
+            if(resp.status == 200 && resp.data.status == 0){   
+                //修改成功
+            }
+            return resp.status
         },
 
         async setNickname(context, payload){
             console.log(payload)
             context.commit("setIsLoading", true);
-            context.commit("setUserInfo", null);     
             setTimeout(() => {
                 context.commit("setIsLoading", false);
             }, 2000);
+            var resp = await changeNickname({
+                account : context.state.userInfo.account,
+                nickname: payload
+            })
+            console.log(resp)
+            if(resp.status == 200 && resp.data.status == 0){   
+                context.commit("setNickname", payload);     
+            }
+            else{
+                return ;
+            }
+            
         },
-
-
     },
 }

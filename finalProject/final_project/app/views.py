@@ -46,7 +46,8 @@ class UserViewSet(viewsets.ModelViewSet):
                 "data" : {
                     "userInfo":{
                         "nickname" : user.nickname,
-                        "account" : account,
+                        "account" : user.account,
+                        "lastLogDate" :  user.lastLogDate
                     }
                 }
             })
@@ -77,8 +78,9 @@ class UserViewSet(viewsets.ModelViewSet):
                     "mes" : "success",
                     "data" : {
                         "userInfo" : {
-                            "account" : account,
-                            "nickname" : nickname,
+                            "nickname" : user.nickname,
+                            "account" : user.account,
+                            "lastLogDate" :  user.lastLogDate
                         }
                     }
                 })
@@ -87,6 +89,50 @@ class UserViewSet(viewsets.ModelViewSet):
                     "status":1,
                     "mes" : "user account exists"
                 })
+        except:
+            # 注册失败
+            return JsonResponse({
+                "status":1,
+                "mes" : "fail"
+            })
+    
+    # 接口为 http://127.0.0.1:8000/api/user/changeNickname/
+    @action(methods = ['post'], detail = False)
+    def changeNickname(self,request, pk = None):
+        account = request.data["params"]["account"]
+        nickname = request.data["params"]["nickname"]
+        try:
+            User.objects.filter(account = account).update(nickname = nickname)
+            # 系统总没有该用户，则注册成功
+            return JsonResponse({
+                "status" : 0,
+                "mes" : "success",
+                "data" : {
+                    "userInfo" : {
+                        "account" : account,
+                        "nickname" : nickname,
+                    }
+                }
+            })
+        except:
+            # 注册失败
+            return JsonResponse({
+                "status":1,
+                "mes" : "fail"
+            })
+
+    # 接口为 http://127.0.0.1:8000/api/user/changePassword/
+    @action(methods = ['post'], detail = False)
+    def changePassword(self,request, pk = None):
+        account = request.data["params"]["account"]
+        password = request.data["params"]["password"]
+        try:
+            User.objects.filter(account = account).update(password = password)
+            # 系统总没有该用户，则注册成功
+            return JsonResponse({
+                "status" : 0,
+                "mes" : "success",
+            })
         except:
             # 注册失败
             return JsonResponse({

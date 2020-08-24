@@ -12,8 +12,8 @@
           <q-btn class="header-option" outline color="wight" label="注册" :to="{name:'register'}" />
         </q-btn-group>
 
-        <template v-if="userInfo&&!isLoading">
-          <q-toolbar-title class="text-subtitle2 text-right">
+        <template v-if="userInfo">
+          <q-toolbar-title class="text-subtitle2 text-right" v-if="userInfo&&!isLoading">
             欢迎你！{{userInfo.nickname}}
           </q-toolbar-title>
           <q-btn-group flat class="header-options">

@@ -26,7 +26,7 @@ export async function register(regInfo){
 }
 
 
-export async function changeNickname(nickname){
+export async function changeNickname(payload){
     setTimeout(() => {
         return {data:{
             status:1,
@@ -34,9 +34,9 @@ export async function changeNickname(nickname){
         }}
     }, 2000);
     var resp = await axios.post(
-        'http://localhost:8000/api/user/changeNickname',
+        'http://localhost:8000/api/user/changeNickname/',
         {
-            params: nickname,
+            params: payload,
         }
     );
     // console.log(resp)
@@ -44,7 +44,7 @@ export async function changeNickname(nickname){
 }
 
 
-export async function changePassword(password){
+export async function changePassword(payload){
     setTimeout(() => {
         return {data:{
             status:1,
@@ -54,7 +54,7 @@ export async function changePassword(password){
     var resp = await axios.post(
         'http://localhost:8000/api/user/changePassword/',
         {
-            params: password,
+            params: payload,
         }
     );
     // console.log(resp)
