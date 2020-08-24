@@ -1,4 +1,3 @@
-// 登录用户的仓库数据
 // 新闻频道的数据仓库
 import {getNewsChannels} from "../services/newsServices"
 export default{

@@ -20,7 +20,7 @@
             <!-- 加载特效 -->
             <q-card-actions>
                 <q-btn flat color="brown-10" icon="share" />
-                <q-btn flat color="amber-13" icon="bookmark" />
+                <q-btn flat color="amber-13" icon="bookmark" @click="handleBookmark()"/>
                 <q-space />
                 <q-btn
                 color="grey"
@@ -35,6 +35,7 @@
             <q-separator />
 
 
+            <!-- 新闻全文 -->
             <q-dialog v-model="expanded">
                 <q-card>
                     <q-card-section>
@@ -77,6 +78,11 @@ export default {
         return {
             expanded: false,
             isLoading: false,
+        }
+    },
+    methods:{
+        handleBookmark(){
+            
         }
     },
     props:{

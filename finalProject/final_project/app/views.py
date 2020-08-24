@@ -148,19 +148,26 @@ class FavoriteViewSet(viewsets.ModelViewSet):
 
     # 用户收藏了一条新闻
     def create(self, request, *args, **kwargs):
-        account = request.data["params"]["account"]
-        newsID = request.data["params"]["newsID"]
+        print('create')
         try:
-            newRecord = Favorite(
-                account= account,
+            account = request.query_params.dict()["account"]
+            newsID = request.query_params.dict()["newsID"]
+            # 由于收藏新闻数据外码依赖与user 故需要先获取user
+            print("1")
+            user = User.objects.get(account = account)
+            newRecord = Favorite.objects.create(
+                user = user,
                 newsID = newsID,
             )
+            print("1")
             newRecord.save()
+            print("1")
             return JsonResponse({
                 "status":0,
                 "mes" : "success",
                 "data" : {
-                    "id": newRecord.id
+                    "id": newRecord.id,
+                    "newsID" : newRecord.newsID,
                 }
             })
         except:
@@ -171,8 +178,10 @@ class FavoriteViewSet(viewsets.ModelViewSet):
 
     # 用户删除了一条新闻
     def delete(self, request, *args, **kwargs):
-        id = request.data["params"]["id"]
+        print("delete")
         try:
+            print(request.query_params.dict())
+            id = request.query_params.dict()["id"]
             Favorite.objects.filter(id = id).delete()
             return JsonResponse({
                 "status":0,
@@ -186,15 +195,21 @@ class FavoriteViewSet(viewsets.ModelViewSet):
 
     # 传入用户account，返回所有的收藏新闻的数据
     def list(self, request, pk=None):
+        print("list")
         try:
-            # account = request.data["params"]["account"]
-            account = 11
-            favorite = Favorite.objects.filter(account = account).all()
+            account = request.query_params.dict()["account"]
+            # 由于存在外码依赖 需要先获取依赖的user,
+            user = User.objects.filter(account = account).first()
+            favorite = Favorite.objects.filter(user = user)
             favorite_s = FavoriteSerializer(favorite, many=True)
+
+            # print(favorite_s.data)
             return JsonResponse({
                 "status":0,
                 "mes" : "success",
-                "data" : favorite_s.data
+                "data" : {
+                    "newsList" : favorite_s.data
+                }
             })
         except:
             return JsonResponse({

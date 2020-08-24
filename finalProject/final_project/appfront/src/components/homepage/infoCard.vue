@@ -59,6 +59,9 @@
 import headCard from './headCard'
 import historyNews from './historyNews'
 import userInfo from './userInfo'
+
+import {mapState} from 'vuex'
+
 export default {
     components:{
         headCard,
@@ -77,7 +80,9 @@ export default {
         },
         favoriteNum(){
             return 10;
-        }
+        },
+        ...mapState('favorite', ['newsList', 'isLoading'])
+
     },
     props:{
         nickname:{

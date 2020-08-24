@@ -1,7 +1,8 @@
 import axios from 'axios'
+import {URL} from './config'
 
 export async function login(loginInfo){
-    var resp = await axios.post(`http://127.0.0.1:8000/api/user/login/`,{
+    var resp = await axios.post(`${URL}api/user/login/`,{
             params : loginInfo
         })
     console.log("log sccuess", resp)
@@ -15,9 +16,7 @@ export async function register(regInfo){
             mes:"timeout"
         }}
     }, 2000);
-    var resp = await axios.post(
-        'http://localhost:8000/api/user/register/',
-        {
+    var resp = await axios.post(`${URL}api/user/register/`,{
             params: regInfo,
         }
     );
@@ -33,9 +32,7 @@ export async function changeNickname(payload){
             mes:"timeout"
         }}
     }, 2000);
-    var resp = await axios.post(
-        'http://localhost:8000/api/user/changeNickname/',
-        {
+    var resp = await axios.post(`${URL}api/user/changeNickname/`,{
             params: payload,
         }
     );
@@ -51,9 +48,7 @@ export async function changePassword(payload){
             mes:"timeout"
         }}
     }, 2000);
-    var resp = await axios.post(
-        'http://localhost:8000/api/user/changePassword/',
-        {
+    var resp = await axios.post(`${URL}api/user/changePassword/`,{
             params: payload,
         }
     );

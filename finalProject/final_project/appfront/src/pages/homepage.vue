@@ -1,6 +1,6 @@
 <template>
   <div>
-      <info-card/>
+    <info-card/>
   </div>
 </template>
 

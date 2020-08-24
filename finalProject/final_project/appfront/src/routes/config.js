@@ -4,7 +4,7 @@ export default{
         {
             path:'/',
             name:'',
-            component: ()=> import("@/components/footer")
+            component: ()=> import("@/components/test")
         },{
             path:'/homepage/:account',
             name:'homepage',
@@ -13,10 +13,6 @@ export default{
             path:'/dialog',
             name:'dialog',
             component: ()=> import("@/components/dialog"),           
-        },{
-            path:'/index',
-            name:'index',
-            component: ()=> import("@/components/HelloWorld"),           
         },{
             path:'/login',
             name:'login',
