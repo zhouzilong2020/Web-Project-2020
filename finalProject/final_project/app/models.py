@@ -15,7 +15,7 @@ class User(models.Model):
 
 class History(models.Model):
     user = models.ForeignKey("User", on_delete=models.CASCADE, null=False)
-    newsID = models.CharField(max_length = 64)
+    newsID = models.CharField(max_length = 64 )
     data = models.DateField(auto_now_add=True)
     def __str__(self):
         return self.data 

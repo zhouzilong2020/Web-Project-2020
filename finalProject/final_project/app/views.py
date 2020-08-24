@@ -150,26 +150,39 @@ class FavoriteViewSet(viewsets.ModelViewSet):
     def create(self, request, *args, **kwargs):
         print('create')
         try:
+
+            print(request.query_params.dict())
             account = request.query_params.dict()["account"]
             newsID = request.query_params.dict()["newsID"]
-            # 由于收藏新闻数据外码依赖与user 故需要先获取user
+
             print("1")
+            # 由于收藏新闻数据外码依赖与user 故需要先获取user 
+            # 这里使用get 而不是filter 返回的是一个结果而不是一个结果集合
             user = User.objects.get(account = account)
-            newRecord = Favorite.objects.create(
-                user = user,
-                newsID = newsID,
-            )
+
             print("1")
-            newRecord.save()
-            print("1")
-            return JsonResponse({
-                "status":0,
-                "mes" : "success",
-                "data" : {
-                    "id": newRecord.id,
-                    "newsID" : newRecord.newsID,
-                }
-            })
+            # 防止重复收藏
+            # 表没有见好。。
+            favorite = Favorite.objects.filter(user = user, newsID = newsID).first()
+            if(favorite == None): # 如果没有这条记录
+                newRecord = Favorite.objects.create(
+                    user = user,
+                    newsID = newsID,
+                )
+                newRecord.save()
+                return JsonResponse({
+                    "status":0,
+                    "mes" : "success",
+                    "data" : {
+                        "id": newRecord.id,
+                        "newsID" : newRecord.newsID,
+                    }
+                })
+            else:
+                return JsonResponse({
+                    "status":1,
+                    "mes" : "重复收藏！",
+                })
         except:
             return JsonResponse({
                 "status":1,

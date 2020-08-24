@@ -16,8 +16,10 @@ export default{
         },
         // 要找到数组中的一个元素然后删除，简单使用遍历，然后删除
         removeNews(state, payload){ //传入id
-            for(let i = 0, len = state.newsNum; i < len; i++){
+            for(let i = 0, len = state.newsList.length; i < len; i++){
+                // console.log(state.newsList[i])
                 if(state.newsList[i].id == payload){
+                    // console.log("asfasbdfuldsfiou")
                     state.newsList.pop(i)
                 }
             }

@@ -20,7 +20,7 @@
             <!-- 加载特效 -->
             <q-card-actions>
                 <q-btn flat color="brown-10" icon="share" />
-                <q-btn flat color="amber-13" icon="bookmark" @click="handleBookmark()"/>
+                <q-btn flat :color="isFavorite? 'amber-13': 'black'" icon="bookmark" @click="handleBookmark()"/>
                 <q-space />
                 <q-btn
                 color="grey"
@@ -72,17 +72,30 @@
 </template>
 
 <script>
-
+import {mapState} from 'vuex'
 export default {
     data () {
         return {
             expanded: false,
             isLoading: false,
+            favoriteId:'',
         }
     },
     methods:{
         handleBookmark(){
-            
+            console.log(this.news)
+            if(!this.isFavorite){   //如果没有收藏，则收藏
+                this.$store.dispatch('favorite/addNews',{
+                    account: this.userInfo.account, 
+                    newsID: this.news.id
+                })
+            }
+            else{   //如果已经收藏，则取消收藏
+                this.$store.dispatch('favorite/removeNews',{
+                    id: this.db_id
+                })
+            }
+
         }
     },
     props:{
@@ -98,7 +111,28 @@ export default {
             else {
                 return 200;
             }
+        },
+        ...mapState('userInfo', ['userInfo']),
+        ...mapState('favorite', ['newsList']),
+
+        isFavorite(){
+            for(let i = 0, len = this.newsList.length; i < len; i++){
+                if(this.newsList[i].newsID == this.news.id){
+                    return true
+                }
+            }
+            return false
+        },
+
+        db_id(){
+            for(let i = 0, len = this.newsList.length; i < len; i++){
+                if(this.newsList[i].newsID == this.news.id){
+                    return this.newsList[i].id
+                }
+            }
+            return false
         }
+        
     },
     /**
      * 创建

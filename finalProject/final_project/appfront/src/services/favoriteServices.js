@@ -15,6 +15,7 @@ export async function getAllFavorite(account){
 }
 
 export async function addFavorite(account, newsID){
+    console.log(account, newsID)
     var resp = await axios({
         method: 'post',
         url: `${URL}api/favorite/`,
