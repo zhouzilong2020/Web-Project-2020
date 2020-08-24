@@ -21,7 +21,7 @@
         </q-card-section>
         <q-card-actions vertical class="justify-start">
             <q-btn size="12px" flat dense round icon="more_vert" @click="fullContent = true"/>
-            <q-btn flat round  icon="delete" />
+            <q-btn flat round  icon="delete" @click="handleDelete()"/>
           </q-card-actions>
       </q-card-section>
     </q-card>
@@ -72,6 +72,16 @@ export default {
       else{
         return this.news.content.slice(0, 230)
       }
+    }
+  },
+  created(){
+    console.log(this.news)
+  },
+  methods:{
+    handleDelete(){
+      this.$store.dispatch('favorite/removeNews',{
+          id: this.news.id
+      })
     }
   }
 }

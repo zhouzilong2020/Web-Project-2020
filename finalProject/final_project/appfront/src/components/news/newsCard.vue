@@ -83,11 +83,22 @@ export default {
     },
     methods:{
         handleBookmark(){
-            console.log(this.news)
+            // console.log(this.news)
             if(!this.isFavorite){   //如果没有收藏，则收藏
+                var imageUrl = ''
+                if(this.news.havePic){
+                    imageUrl = this.news.imageurls[0].url
+                }
                 this.$store.dispatch('favorite/addNews',{
                     account: this.userInfo.account, 
-                    newsID: this.news.id
+                    newsID: this.news.id,
+                    pubDate : this.news.pubDate,
+                    title : this.news.title,
+                    source : this.news.source,
+                    content : this.news.content,
+                    link : this.news.link,
+                    havePic : this.news.havePic,
+                    imageurls : imageUrl
                 })
             }
             else{   //如果已经收藏，则取消收藏

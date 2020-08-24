@@ -58,7 +58,9 @@ export default{
         //payload 传入account/newsID
         async addNews(context, payload){
             context.commit('setIsLoading', true)
-            var resp = await addFavorite(payload.account, payload.newsID)
+            var resp = await addFavorite(payload)
+            
+            // console.log("asdasdasdasdasdasd",payload)
 
             console.log("in store", resp)
             

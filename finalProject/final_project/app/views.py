@@ -150,26 +150,45 @@ class FavoriteViewSet(viewsets.ModelViewSet):
     def create(self, request, *args, **kwargs):
         print('create')
         try:
-
-            print(request.query_params.dict())
+        
             account = request.query_params.dict()["account"]
             newsID = request.query_params.dict()["newsID"]
-
-            print("1")
+            pubDate = request.query_params.dict()["pubDate"]
+            title =request.query_params.dict()["title"]
+            source = request.query_params.dict()["source"]
+            content =request.query_params.dict()["content"]
+            link = request.query_params.dict()["link"]
+            imageurls = request.query_params.dict()["imageurls"]
+            havePic = request.query_params.dict()["havePic"]
             # 由于收藏新闻数据外码依赖与user 故需要先获取user 
             # 这里使用get 而不是filter 返回的是一个结果而不是一个结果集合
             user = User.objects.get(account = account)
-
-            print("1")
+            # js和python 语法问题
+            if(havePic == 'false'):
+                havePic = False
+            else:
+                havePic = True
             # 防止重复收藏
             # 表没有见好。。
             favorite = Favorite.objects.filter(user = user, newsID = newsID).first()
+            
             if(favorite == None): # 如果没有这条记录
                 newRecord = Favorite.objects.create(
                     user = user,
                     newsID = newsID,
+                    pubDate = pubDate,
+                    title = title,
+                    source = source,
+                    content = content,
+                    link = link,
+                    havePic = havePic,
+                    imageurls = imageurls
                 )
+                print("1111111111111111111111111111111111111111111111111")
+
                 newRecord.save()
+                print("1111111111111111111111111111111111111111111111111")
+
                 return JsonResponse({
                     "status":0,
                     "mes" : "success",

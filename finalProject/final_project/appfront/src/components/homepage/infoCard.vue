@@ -35,19 +35,13 @@
 
                 <q-tab-panel name="history">
                     <div class="text-h4 q-mb-md">历史记录</div>
-                    <history-news />
-                    <history-news />
-                    <history-news />
-                   
+                    <div class="text-h1">哈哈，你被骗了，其实我没有历史记录</div>
                 </q-tab-panel>
 
                 <q-tab-panel name="bookmark">
                     <div class="text-h4 q-mb-md">我的收藏</div>
-                    <history-news />
-                    <history-news />
-                    <history-news />
-                    <history-news />
-                   
+                    <!-- 收藏的消息 -->
+                    <history-news v-for="news in newsList" :key="news.id" :news="news"/>
                 </q-tab-panel>
                 </q-tab-panels>
             </div>
@@ -79,7 +73,7 @@ export default {
             return 10;
         },
         favoriteNum(){
-            return 10;
+            return this.newsList.length ;
         },
         ...mapState('favorite', ['newsList', 'isLoading'])
 
