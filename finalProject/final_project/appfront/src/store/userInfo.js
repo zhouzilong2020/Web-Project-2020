@@ -1,5 +1,5 @@
 // 登录用户的仓库数据
-import {login, register, changeNickname, changePassword} from "../services/userService"
+import {login, whoAmI, logout,register, changeNickname, changePassword} from "../services/userService"
 export default{
     namespaced: true,
     state: {
@@ -37,6 +37,13 @@ export default{
             }, 2000);
         },
 
+        async whoAmI(context){
+            var resp = await whoAmI()
+            if(resp){
+                context.commit("setUserInfo", resp)
+            }
+        },
+
         async regUser(context, payload){
             context.commit("setIsLoading", true);     
             var resp = await register(payload);
@@ -54,6 +61,7 @@ export default{
         },
         async logoutUser(context){
             // context.commit("setIsLoading", true);
+            logout()
             context.commit("setUserInfo", null);     
             setTimeout(() => {
                 // context.commit("setIsLoading", false);

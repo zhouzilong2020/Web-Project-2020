@@ -3,8 +3,8 @@ export default{
     routes:[
         {
             path:'/',
-            name:'',
-            component: ()=> import("@/components/test")
+            name:'index',
+            component: ()=> import("@/components/index")
         },{
             path:'/homepage/:account',
             name:'homepage',
