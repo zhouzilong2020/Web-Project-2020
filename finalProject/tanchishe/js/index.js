@@ -3,12 +3,14 @@ const BoxWidth = 20,    //方块宽度
       Tr = 40,          //一共多少行
       Td = 40;          //一共多少列
 
+var snake = null; //蛇实例
+
 
 /**
  * 方块的工厂函数，传入相对坐标(1, 1)--->（20， 20）
  * @param {*} x 方块的x坐标, 是相对坐标
  * @param {*} y 方块的y坐标，是相对坐标
- * @param {*} className 方块的样式，蛇头、身体、食物
+ * @param {*} className 方块的样式(蛇头、身体、食物)
  */
 function Square(x, y, className){
     // 建立真实坐标和考虑盒子大小坐标换算
@@ -20,9 +22,8 @@ function Square(x, y, className){
     this.viewContent = document.createElement('div');
     this.viewContent.className = this.class;
     // 将方块设置的父集为snake, 游戏的主体部分
-    this.parent = document.getElementById('snake')
+    this.parent = document.getElementById('snake');
 }
-
 /**
  * 创建方块dom元素，并添加到dom中 
  * */ 
@@ -31,10 +32,9 @@ Square.prototype.create = function(){
     // 添加相应位置属性，哈哈
     this.viewContent.style.position = 'absolute'; 
     this.viewContent.style.width = `${BoxWidth}px`;
-    this.viewContent.style.width = `${BoxHeight}px`;  
+    this.viewContent.style.height = `${BoxHeight}px`;  
     this.viewContent.style.left = `${this.x}px`;
     this.viewContent.style.top = `${this.y}px`;
-
     // 将当前这个box添加到页面中
     this.parent.appendChild(this.viewContent);
 }
@@ -52,10 +52,70 @@ Square.prototype.remove = function(){
 function Snake(){
     this.head = null;       // 蛇头信息
     this.tail = null;       // 蛇尾信息
-    this.body = [ ];        // 蛇每一个身体的位置
-    this.directionNum = {}; // 每一身体走的方向
+    this.pos = [ ];         // 蛇每一个身体的位置
+    this.DIRC = {   // 方向数组
+        left:{
+            x : -1,
+            y : 0,
+        },
+        right:{
+            x : 1,
+            y : 0,
+        },
+        up:{
+            x : 0,
+            y : -1,
+        },
+        down:{
+            x : 0,
+            y : 1,
+        }
+    };
 }
 // 构造函数
 Snake.prototype.init = function(){
-    
+    //创建头
+    var snakeHead = new Square(2, 0, 'snake-head')
+    snakeHead.create();
+    this.head = snakeHead;
+    this.pos.push([2,0]);       //存放坐标
+
+    //创建身体1
+    var snakeBody1 = new Square(1, 0, 'snake-body')
+    snakeBody1.create();
+    this.pos.push([1,0]);       //存放坐标
+
+    //创建身体2 同时也是尾巴
+    var snakeBody2 = new Square(0, 0, 'snake-body')
+    snakeBody2.create();
+    this.pos.push([0,0]);       //
+    this.tail = snakeBody2;
+
+    //构造蛇皮连链表
+    snakeHead.last = null;
+    snakeHead.next = snakeBody1;
+
+    snakeBody1.last = snakeHead;
+    snakeBody1.next = snakeBody2;
+
+    snakeBody2.last = snakeBody1;
+    snakeBody2.next = null;
+
+    this.dir = this.DIRC.right;
 }
+
+/**
+ * 判断下一个位置是否可行，若不行，则返回错误码
+ */
+Snake.prototype.getNextPos = function (){
+    //蛇头当前坐标
+    var headPos = [ //转换为相对坐标
+        this.head.x / BoxWidth + this.dir.x,
+        this.head.y / BoxWidth + this.dir.y
+    ]
+    //蛇头移动方向
+    // var 
+}
+
+snake = new Snake();
+snake.init();
